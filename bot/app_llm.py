@@ -98,13 +98,45 @@ def upload_document():
         return jsonify({'error': '目前只支持 .xlsx 文件'}), 400
 
     try:
-        content = xlsx_to_text(uploaded_file)
+        content, diagnostics = xlsx_to_text(uploaded_file)
         if not content.strip():
-            return jsonify({'error': 'xlsx 文件没有解析到有效内容'}), 400
+            return jsonify({
+                'error': 'xlsx 文件没有解析到有效内容，可能是图片版成绩单或表格内容不是普通单元格。',
+                'diagnostics': diagnostics,
+            }), 400
+        if diagnostics.get('non_empty_cells', 0) == 0:
+            return jsonify({
+                'error': 'xlsx 里没有读到普通文本/数字单元格；如果成绩单是截图嵌入 Excel，需要先转成可复制的表格文本。',
+                'diagnostics': diagnostics,
+            }), 400
         message = bot.add_document_memory(filename, content)
         return jsonify({
             'message': message,
             'filename': filename,
+            'characters': len(content),
+            'diagnostics': diagnostics,
+            'memory': bot.get_memory(),
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/memory/text', methods=['POST'])
+def add_memory_text():
+    if bot is None:
+        return jsonify({'error': '机器人未正确配置'}), 500
+
+    data = request.get_json() or {}
+    title = (data.get('title') or '手动粘贴的学生信息').strip()
+    content = (data.get('content') or '').strip()
+
+    if not content:
+        return jsonify({'error': '请输入要写入长期记忆的文本'}), 400
+
+    try:
+        message = bot.add_document_memory(title, content)
+        return jsonify({
+            'message': message,
+            'title': title,
             'characters': len(content),
             'memory': bot.get_memory(),
         })
@@ -112,15 +144,46 @@ def upload_document():
         return jsonify({'error': str(e)}), 500
 
 def xlsx_to_text(file_storage):
-    workbook = load_workbook(file_storage, data_only=True, read_only=True)
+    workbook = load_workbook(file_storage, data_only=True, read_only=False)
+    content, diagnostics = workbook_to_text(workbook)
+    if diagnostics["non_empty_cells"] > 0:
+        return content, diagnostics
+
+    file_storage.stream.seek(0)
+    formula_workbook = load_workbook(file_storage, data_only=False, read_only=False)
+    formula_content, formula_diagnostics = workbook_to_text(formula_workbook)
+    formula_diagnostics["data_only_empty"] = True
+    return formula_content, formula_diagnostics
+
+def workbook_to_text(workbook):
     parts = []
+    diagnostics = {
+        "sheets": [],
+        "non_empty_cells": 0,
+        "image_count": 0,
+    }
 
     for sheet in workbook.worksheets:
+        image_count = len(getattr(sheet, "_images", []))
+        diagnostics["image_count"] += image_count
+
         rows = list(sheet.iter_rows(values_only=True))
+        sheet_non_empty = sum(1 for row in rows for value in row if cell_to_text(value))
+        diagnostics["non_empty_cells"] += sheet_non_empty
+        diagnostics["sheets"].append({
+            "title": sheet.title,
+            "max_row": sheet.max_row,
+            "max_column": sheet.max_column,
+            "non_empty_cells": sheet_non_empty,
+            "image_count": image_count,
+        })
+
+        parts.append(f"成绩单工作表：{sheet.title}")
+        if image_count:
+            parts.append(f"提示：该工作表包含 {image_count} 张嵌入图片，图片内容无法直接作为单元格解析。")
         if not rows:
             continue
 
-        parts.append(f"成绩单工作表：{sheet.title}")
         headers = [cell_to_text(value) for value in rows[0]]
         has_headers = any(headers)
 
@@ -142,7 +205,7 @@ def xlsx_to_text(file_storage):
 
             parts.append(f"第{row_index}行：{row_text}")
 
-    return "\n".join(parts)
+    return "\n".join(parts), diagnostics
 
 def cell_to_text(value):
     if value is None:

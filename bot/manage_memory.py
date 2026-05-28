@@ -24,15 +24,47 @@ def load_memory_store():
 
 
 def xlsx_to_text(path):
-    workbook = load_workbook(path, data_only=True, read_only=True)
+    workbook = load_workbook(path, data_only=True, read_only=False)
+    content, diagnostics = workbook_to_text(workbook, path)
+    if diagnostics["non_empty_cells"] > 0:
+        return content
+
+    workbook = load_workbook(path, data_only=False, read_only=False)
+    content, diagnostics = workbook_to_text(workbook, path)
+    if diagnostics["non_empty_cells"] == 0:
+        raise ValueError(f"xlsx 没有读到普通单元格内容，诊断信息：{diagnostics}")
+    return content
+
+
+def workbook_to_text(workbook, path):
     parts = [f"成绩单文件：{os.path.basename(path)}"]
+    diagnostics = {
+        "sheets": [],
+        "non_empty_cells": 0,
+        "image_count": 0,
+    }
 
     for sheet in workbook.worksheets:
+        image_count = len(getattr(sheet, "_images", []))
+        diagnostics["image_count"] += image_count
+
         rows = list(sheet.iter_rows(values_only=True))
+        sheet_non_empty = sum(1 for row in rows for value in row if cell_to_text(value))
+        diagnostics["non_empty_cells"] += sheet_non_empty
+        diagnostics["sheets"].append({
+            "title": sheet.title,
+            "max_row": sheet.max_row,
+            "max_column": sheet.max_column,
+            "non_empty_cells": sheet_non_empty,
+            "image_count": image_count,
+        })
+
+        parts.append(f"成绩单工作表：{sheet.title}")
+        if image_count:
+            parts.append(f"提示：该工作表包含 {image_count} 张嵌入图片，图片内容无法直接作为单元格解析。")
         if not rows:
             continue
 
-        parts.append(f"成绩单工作表：{sheet.title}")
         headers = [cell_to_text(value) for value in rows[0]]
         has_headers = any(headers)
 
@@ -56,7 +88,7 @@ def xlsx_to_text(path):
 
             parts.append(f"第{start_index + offset}行：{row_text}")
 
-    return "\n".join(parts)
+    return "\n".join(parts), diagnostics
 
 
 def cell_to_text(value):

@@ -175,6 +175,18 @@
             border-radius: 10px;
         }
 
+        #memoryTextInput {
+            flex: 1 1 100%;
+            min-height: 76px;
+            padding: 10px 12px;
+            border: 1px solid #d8dee8;
+            border-radius: 10px;
+            resize: vertical;
+            font-family: inherit;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
         #uploadBtn {
             background: #14532d;
             color: white;
@@ -394,6 +406,8 @@
             <input type="file" id="memoryFileInput" accept=".xlsx">
             <button id="uploadBtn" class="btn" onclick="uploadMemoryFile()">上传成绩单</button>
             <button id="resetMemoryBtn" class="btn" onclick="resetMemory()">清空长期记忆</button>
+            <textarea id="memoryTextInput" placeholder="也可以把成绩单文字、自我介绍、学习目标直接粘贴在这里，写入长期记忆。"></textarea>
+            <button id="saveTextMemoryBtn" class="btn" onclick="saveTextMemory()">保存粘贴文本</button>
         </div>
 
         <div class="input-container">
@@ -644,6 +658,39 @@
                 }
             } catch (error) {
                 alert('上传失败：网络错误');
+            }
+        }
+
+        async function saveTextMemory() {
+            const textarea = document.getElementById('memoryTextInput');
+            const content = textarea.value.trim();
+            if (!content) {
+                alert('请先粘贴要写入长期记忆的文本。');
+                return;
+            }
+
+            try {
+                const response = await fetch('/memory/text', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        title: '手动粘贴的学生信息',
+                        content: content,
+                    }),
+                });
+                const data = await response.json();
+
+                if (response.ok) {
+                    addMessage(`已写入长期记忆，共 ${data.characters} 个字符。`, false);
+                    textarea.value = '';
+                    loadStats();
+                } else {
+                    alert('保存失败：' + data.error);
+                }
+            } catch (error) {
+                alert('保存失败：网络错误');
             }
         }
 

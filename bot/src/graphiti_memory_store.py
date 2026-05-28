@@ -2,6 +2,7 @@ import asyncio
 import hashlib
 import inspect
 import os
+import threading
 import time
 from datetime import datetime
 from typing import Any, Dict, List, Optional
@@ -118,6 +119,7 @@ class GraphitiMemoryStore:
         self.graphiti = None
         self.episode_type = None
         self.loop = asyncio.new_event_loop()
+        self._loop_lock = threading.RLock()
         self.initialized = False
         self.status = "not_initialized"
         self.last_error = ""
@@ -375,7 +377,16 @@ class GraphitiMemoryStore:
         return str(item)
 
     def _run(self, coro):
-        return self.loop.run_until_complete(coro)
+        with self._loop_lock:
+            try:
+                if self.loop.is_closed():
+                    self.loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(self.loop)
+                return self.loop.run_until_complete(coro)
+            except Exception:
+                if inspect.iscoroutine(coro):
+                    coro.close()
+                raise
 
     def _await_if_needed(self, value):
         if inspect.isawaitable(value):
