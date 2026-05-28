@@ -2,7 +2,7 @@
   "provider": "deepseek",
   "api_config": {
     "api_key": "your-deepseek-api-key",
-    "model": "deepseek-chat"
+    "model": "deepseek-v4-flash"
   },
   "memory": {
     "enabled": true,
@@ -44,7 +44,7 @@
       "provider": "deepseek",
       "api_config": {
         "api_key": "your-deepseek-api-key",
-        "model": "deepseek-chat"
+        "model": "deepseek-v4-flash"
       }
     }
   }
