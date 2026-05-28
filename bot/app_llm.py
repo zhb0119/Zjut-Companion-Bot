@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, render_template, request
 import os
 import sys
+import time
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 
@@ -41,8 +42,14 @@ def ask():
         return jsonify({"error": "请输入问题"}), 400
 
     try:
-        return jsonify({"answer": bot.ask(question)})
+        start = time.perf_counter()
+        print(f"[ask] start question={question[:80]}", flush=True)
+        answer = bot.ask(question)
+        elapsed = time.perf_counter() - start
+        print(f"[ask] done elapsed={elapsed:.2f}s", flush=True)
+        return jsonify({"answer": answer})
     except Exception as exc:
+        print(f"[ask] failed error={exc}", flush=True)
         return jsonify({"error": str(exc)}), 500
 
 
@@ -172,4 +179,4 @@ def graph_data():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False, threaded=True, use_reloader=False)

@@ -1,5 +1,6 @@
 import json
 import os
+import threading
 from typing import Dict, Optional
 
 from graphiti_memory_store import GraphitiMemoryStore
@@ -78,7 +79,7 @@ class LLMChatBot:
             answer = self.llm_client.chat(messages, temperature=0.7)
             self.conversation_history.append({"role": "user", "content": question})
             self.conversation_history.append({"role": "assistant", "content": answer})
-            self.memory_store.add_interaction(question, answer)
+            self._remember_interaction_async(question, answer)
 
             if len(self.conversation_history) > 20:
                 self.conversation_history = self.conversation_history[-20:]
@@ -86,6 +87,15 @@ class LLMChatBot:
             return answer
         except Exception as exc:
             return f"调用大语言模型时出错：{exc}\n请检查 API 和配置。"
+
+    def _remember_interaction_async(self, question: str, answer: str):
+        def worker():
+            try:
+                self.memory_store.add_interaction(question, answer)
+            except Exception as exc:
+                print(f"Graphiti memory write failed: {exc}")
+
+        threading.Thread(target=worker, daemon=True).start()
 
     def clear_history(self):
         self.conversation_history = []

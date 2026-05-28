@@ -77,7 +77,7 @@ class OpenAIClient(BaseLLMClient):
     def __init__(self, api_key: str, base_url: Optional[str] = None, model: str = "gpt-3.5-turbo"):
         try:
             from openai import OpenAI
-            self.client = OpenAI(api_key=api_key, base_url=base_url)
+            self.client = OpenAI(api_key=api_key, base_url=base_url, timeout=45.0)
             self.model = model
         except ImportError:
             raise ImportError("请安装OpenAI SDK: pip install openai")
@@ -97,7 +97,8 @@ class DeepSeekClient(BaseLLMClient):
             from openai import OpenAI
             self.client = OpenAI(
                 api_key=api_key,
-                base_url="https://api.deepseek.com"
+                base_url="https://api.deepseek.com",
+                timeout=45.0,
             )
             self.model = model
         except ImportError:
@@ -108,6 +109,7 @@ class DeepSeekClient(BaseLLMClient):
             model=self.model,
             messages=messages,
             temperature=temperature,
+            max_tokens=800,
         )
         return response.choices[0].message.content
 
