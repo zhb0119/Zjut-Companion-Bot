@@ -239,14 +239,60 @@ class GraphitiMemoryStore:
             "updated_at": fallback_snapshot.get("updated_at", ""),
         }
 
-    def clear(self) -> Dict[str, Any]:
+    def clear(self, hard: bool = False) -> Dict[str, Any]:
         self.recent_facts = []
         self.fallback.clear()
         if self.initialized:
-            # Graphiti does not expose a stable group-scoped clear in all versions.
-            # Rotate the namespace so new chats start with an empty memory context.
-            self.group_id = f"{self.group_id}_cleared_{int(time.time())}"
+            if hard:
+                self._delete_group_from_neo4j(self.group_id)
+            else:
+                # Graphiti does not expose a stable group-scoped clear in all versions.
+                # Rotate the namespace so new chats start with an empty memory context.
+                self.group_id = f"{self.group_id}_cleared_{int(time.time())}"
         return self.get()
+
+    def add_document(self, title: str, content: str, source_description: str = "User uploaded document"):
+        if not content or not content.strip():
+            return
+
+        summary = f"{title}: {content[:500]}"
+        if summary not in self.recent_facts:
+            self.recent_facts.append(summary)
+            self.recent_facts = self.recent_facts[-30:]
+
+        if not self.initialized:
+            self.fallback.apply_extraction("", {"summaries": [summary]})
+            return
+
+        episode_name = f"zjut_doc_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}"
+        self._run(
+            self.graphiti.add_episode(
+                name=episode_name,
+                episode_body=content,
+                source=self.episode_type.text,
+                source_description=source_description,
+                reference_time=datetime.now(),
+                group_id=self.group_id,
+            )
+        )
+
+    def _delete_group_from_neo4j(self, group_id: str):
+        neo4j_uri = self.config.get("neo4j_uri") or os.getenv("NEO4J_URI")
+        neo4j_user = self.config.get("neo4j_user") or os.getenv("NEO4J_USER", "neo4j")
+        neo4j_password = self.config.get("neo4j_password") or os.getenv("NEO4J_PASSWORD")
+
+        from neo4j import GraphDatabase
+
+        with GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password)) as driver:
+            with driver.session() as session:
+                session.run(
+                    "MATCH ()-[r]->() WHERE r.group_id = $group_id DELETE r",
+                    group_id=group_id,
+                )
+                session.run(
+                    "MATCH (n) WHERE n.group_id = $group_id DETACH DELETE n",
+                    group_id=group_id,
+                )
 
     def format_for_prompt(self, question: str = "") -> str:
         facts = self.search(question, self.search_limit) if question else self.recent_facts[-self.search_limit:]

@@ -98,6 +98,19 @@ class LLMChatBot:
         self.memory_store.clear()
         return "学生长期记忆已清空。"
 
+    def reset_memory(self):
+        self.memory_store.clear(hard=True)
+        self.conversation_history = []
+        return "学生长期记忆已从当前 Graphiti 命名空间物理清空。"
+
+    def add_document_memory(self, title: str, content: str):
+        self.memory_store.add_document(
+            title,
+            content,
+            source_description="Uploaded transcript or profile document",
+        )
+        return "文档已写入长期记忆。"
+
     def run(self):
         print("\n可以询问信息工程学院培养计划相关问题，例如：")
         print("  - 自动化专业开设了哪些课程？")

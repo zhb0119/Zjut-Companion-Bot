@@ -2,12 +2,15 @@ from flask import Flask, render_template, request, jsonify
 import os
 import sys
 import json
+from werkzeug.utils import secure_filename
+from openpyxl import load_workbook
 
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 from llm_chatbot import LLMChatBot, create_bot_from_config
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 8 * 1024 * 1024
 
 try:
     bot = create_bot_from_config()
@@ -69,6 +72,82 @@ def clear_memory():
         return jsonify({'message': message, 'memory': bot.get_memory()})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@app.route('/memory/reset', methods=['POST'])
+def reset_memory():
+    if bot is None:
+        return jsonify({'error': '机器人未正确配置'}), 500
+
+    try:
+        message = bot.reset_memory()
+        return jsonify({'message': message, 'memory': bot.get_memory()})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/upload', methods=['POST'])
+def upload_document():
+    if bot is None:
+        return jsonify({'error': '机器人未正确配置'}), 500
+
+    uploaded_file = request.files.get('file')
+    if uploaded_file is None or not uploaded_file.filename:
+        return jsonify({'error': '请选择要上传的 xlsx 文件'}), 400
+
+    filename = secure_filename(uploaded_file.filename)
+    if not filename.lower().endswith('.xlsx'):
+        return jsonify({'error': '目前只支持 .xlsx 文件'}), 400
+
+    try:
+        content = xlsx_to_text(uploaded_file)
+        if not content.strip():
+            return jsonify({'error': 'xlsx 文件没有解析到有效内容'}), 400
+        message = bot.add_document_memory(filename, content)
+        return jsonify({
+            'message': message,
+            'filename': filename,
+            'characters': len(content),
+            'memory': bot.get_memory(),
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+def xlsx_to_text(file_storage):
+    workbook = load_workbook(file_storage, data_only=True, read_only=True)
+    parts = []
+
+    for sheet in workbook.worksheets:
+        rows = list(sheet.iter_rows(values_only=True))
+        if not rows:
+            continue
+
+        parts.append(f"成绩单工作表：{sheet.title}")
+        headers = [cell_to_text(value) for value in rows[0]]
+        has_headers = any(headers)
+
+        for row_index, row in enumerate(rows[1:] if has_headers else rows, start=2 if has_headers else 1):
+            values = [cell_to_text(value) for value in row]
+            if not any(values):
+                continue
+
+            if has_headers:
+                fields = []
+                for header, value in zip(headers, values):
+                    if header and value:
+                        fields.append(f"{header}: {value}")
+                    elif value:
+                        fields.append(value)
+                row_text = "；".join(fields)
+            else:
+                row_text = "；".join(value for value in values if value)
+
+            parts.append(f"第{row_index}行：{row_text}")
+
+    return "\n".join(parts)
+
+def cell_to_text(value):
+    if value is None:
+        return ""
+    return str(value).strip()
 
 @app.route('/stats', methods=['GET'])
 def stats():

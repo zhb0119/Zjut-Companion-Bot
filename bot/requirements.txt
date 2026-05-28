@@ -3,3 +3,4 @@ zhipuai>=2.0.0
 dashscope>=1.14.0
 openai>=1.0.0
 graphiti-core==0.20.4
+openpyxl>=3.1.0
