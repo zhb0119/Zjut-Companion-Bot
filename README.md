@@ -1,46 +1,53 @@
 # ZJUT Companion Bot
 
-> 面向高校培养计划 PDF 的知识图谱问答系统：从培养计划抽取课程知识图谱，支持基础问答、LLM-RAG 问答、本地 JSON 记忆，以及 Graphiti + Neo4j 图记忆。
+面向浙江工业大学信息工程学院培养计划的知识图谱问答系统。项目从培养计划数据中整理课程知识图谱，支持基础规则问答、LLM-RAG 问答、本地 JSON 记忆，以及 Graphiti + Neo4j 图记忆。
 
 <p align="center">
   <a href="https://github.com/zjunlp/OneKE"><img alt="OneKE" src="https://img.shields.io/badge/Extraction-OneKE-5B8DEF"></a>
   <a href="https://github.com/getzep/graphiti"><img alt="Graphiti" src="https://img.shields.io/badge/Memory-Graphiti-6F42C1"></a>
   <a href="https://neo4j.com/"><img alt="Neo4j" src="https://img.shields.io/badge/GraphDB-Neo4j-008CC1"></a>
   <a href="https://www.deepseek.com/"><img alt="DeepSeek" src="https://img.shields.io/badge/LLM-DeepSeek-111827"></a>
-  <a href="https://github.com/QwenLM/Qwen"><img alt="Qwen" src="https://img.shields.io/badge/LLM-Qwen-00A3FF"></a>
   <a href="https://dashscope.aliyun.com/"><img alt="DashScope" src="https://img.shields.io/badge/Embedding-text--embedding--v3-FF6A00"></a>
   <a href="https://flask.palletsprojects.com/"><img alt="Flask" src="https://img.shields.io/badge/Web-Flask-000000"></a>
   <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-3776AB">
 </p>
 
-## 目录
+## 界面预览
 
-- [项目亮点](#项目亮点)
-- [系统架构](#系统架构)
-- [目录结构](#目录结构)
-- [Quick Start](#quick-start)
-- [运行方式](#运行方式)
-- [Graphiti + Neo4j 配置](#graphiti--neo4j-配置)
-- [Neo4j 可视化 Memory](#neo4j-可视化-memory)
-- [实现说明](#实现说明)
-- [开源复现说明](#开源复现说明)
+### Web 问答工作台
+
+当前 Web 端采用业务工作台式布局，包含统计指标、快捷问题、聊天区、系统状态面板和知识图谱入口。为避免隐私材料误上传，Web 端不暴露成绩单上传接口，仅保留清空对话和清空长期记忆。
+
+![Web 问答工作台](bot/fig/web_workspace.png)
+
+### Neo4j 图记忆可视化
+
+Graphiti 会把对话 episode、实体和事实边写入 Neo4j。可通过 Neo4j Browser 查看 memory graph。
+
+![Graphiti Memory Graph](bot/fig/neo4j_memory_graph.png)
+
+### Neo4j 文本结果视图
+
+除图视图外，也可以使用 Neo4j Browser 的文本视图检查 episode 内容、实体边和事实文本。
+
+![Graphiti Memory Text View](bot/fig/neo4j_memory_text.png)
 
 ## 项目亮点
 
 - **培养计划知识图谱**：围绕专业、课程、学分、学期、课程类别、先修关系、培养目标等构建结构化知识。
-- **OneKE 抽取流程**：项目方法上使用 OneKE 从培养计划 PDF 抽取实体与关系，仓库内提供已整理的三元组文件便于复现。
+- **OneKE 抽取流程**：项目方法上使用 OneKE 从培养计划 PDF 抽取实体与关系；仓库内提供已整理的三元组文件便于复现。
 - **基础问答版本**：不依赖 LLM，基于规则和模板回答课程、学分、先修课等问题。
-- **LLM-RAG 版本**：从知识图谱检索相关三元组，拼接上下文后调用 LLM 生成自然回答。
-- **本地 JSON 记忆**：记录学生专业、年级、兴趣、目标、薄弱课程等画像字段。
-- **Graphiti 图记忆升级**：将对话 episode 和实体关系写入 Neo4j，实现可查询、可视化的长期 memory graph。
-- **CLI + Web 双入口**：支持命令行问答和 Flask Web 问答界面。
+- **LLM-RAG 版本**：从知识图谱检索相关三元组，拼接长期记忆上下文后调用 LLM 生成自然回答；当前本地 Web 配置可使用 DeepSeek `deepseek-v4-flash`。
+- **本地 JSON 记忆**：记录学生专业、年级、兴趣、目标、薄弱课程等画像字段，作为 Graphiti 不可用时的降级方案。
+- **Graphiti 图记忆升级**：将对话 episode 和实体关系写入 Neo4j，实现可查询、可视化的长期 memory graph；Web 回答先返回，记忆写入后台异步完成。
+- **CLI + Web 双入口**：支持命令行问答和 Flask Web 业务工作台；Web 端保留问答、知识图谱查看、清空对话和清空长期记忆。
 
-当前示例数据来自浙江工业大学信息工程学院相关培养计划，覆盖自动化、智能科学与技术、通信工程等专业。
+当前示例数据覆盖自动化、智能科学与技术、通信工程等专业。
 
 ## 系统架构
 
 ```text
-培养计划 PDF
+培养计划 PDF / 人工整理数据
     │
     ▼
 OneKE 实体/关系抽取
@@ -49,12 +56,13 @@ OneKE 实体/关系抽取
 三元组整理与清洗
     │
     ▼
-zjut_triples_manual.json
+bot/data/zjut_triples_manual.json
     │
     ├── 基础 QA：QuestionParser + AnswerGenerator
     │
     └── LLM QA：RAGRetriever + LLMClient
                │
+               ├── 课程知识图谱上下文
                ├── 本地 JSON Memory
                └── Graphiti Memory
                        │
@@ -63,15 +71,30 @@ zjut_triples_manual.json
                        └── Neo4j Memory Graph
 ```
 
+一次 Web 聊天请求的核心流程：
+
+```text
+用户问题
+  → 检索课程知识图谱 RAG 上下文
+  → 检索 Graphiti 长期记忆
+  → 拼接 Prompt
+  → 调用主问答 LLM（如 deepseek-v4-flash）
+  → 返回回答给前端
+  → 后台线程异步写入 Graphiti episode
+```
+
 ## 目录结构
 
 ```text
 .
 ├── README.md
 ├── .gitignore
+├── docs/
+│   └── ZJUT_Companion_Bot_Report.pdf
 └── bot/
     ├── app.py
     ├── app_llm.py
+    ├── manage_memory.py
     ├── check_data.py
     ├── config.example.json
     ├── requirements.txt
@@ -81,6 +104,10 @@ zjut_triples_manual.json
     │   ├── 自动化.txt
     │   ├── 智科.txt
     │   └── 通信.txt
+    ├── fig/
+    │   ├── web_workspace.png
+    │   ├── neo4j_memory_graph.png
+    │   └── neo4j_memory_text.png
     ├── src/
     │   ├── answer_generator.py
     │   ├── chatbot.py
@@ -100,7 +127,7 @@ zjut_triples_manual.json
 
 ## Quick Start
 
-以下命令默认从仓库根目录执行，也就是包含 `README.md` 和 `bot/` 的目录。
+以下命令默认从仓库根目录执行。
 
 ### 1. 安装依赖
 
@@ -111,16 +138,16 @@ python -m pip install -r requirements.txt
 
 ### 2. 创建本地配置
 
-Linux / macOS：
-
-```bash
-cp config.example.json config.json
-```
-
 Windows PowerShell：
 
 ```powershell
 Copy-Item .\config.example.json .\config.json
+```
+
+Linux / macOS：
+
+```bash
+cp config.example.json config.json
 ```
 
 然后编辑 `config.json`，填入自己的 API key。`config.json` 已被 `.gitignore` 忽略，不应提交到 GitHub。
@@ -168,20 +195,17 @@ python app_llm.py
 http://localhost:5000
 ```
 
+Web 端目前不提供成绩单上传或文本写入长期记忆接口。如果需要导入成绩单等本地材料，请使用本机命令行工具：
+
+```powershell
+python manage_memory.py --xlsx "D:\path\to\transcript.xlsx"
+```
+
 ## Graphiti + Neo4j 配置
 
-Graphiti 是 Python 依赖库，不需要单独启动。需要启动的是 Neo4j。
+Graphiti 是 Python 依赖库，不需要单独启动。需要单独启动的是 Neo4j。
 
 ### 1. 启动 Neo4j
-
-如果本地已有 `neo4j:5.20` 镜像：
-
-```bash
-docker run -d --name zjut-graphiti-neo4j \
-  -p 7474:7474 -p 7687:7687 \
-  -e NEO4J_AUTH=neo4j/graphiti-zjut-2026 \
-  neo4j:5.20
-```
 
 PowerShell：
 
@@ -192,30 +216,11 @@ docker run -d --name zjut-graphiti-neo4j `
   neo4j:5.20
 ```
 
-如果可以拉取更新镜像，也可以使用：
-
-```bash
-docker run -d --name zjut-graphiti-neo4j \
-  -p 7474:7474 -p 7687:7687 \
-  -e NEO4J_AUTH=neo4j/graphiti-zjut-2026 \
-  neo4j:5.26-community
-```
-
-启动已有容器：
+如果容器已经存在：
 
 ```bash
 docker start zjut-graphiti-neo4j
-```
-
-查看状态：
-
-```bash
 docker ps --filter "name=zjut-graphiti-neo4j"
-```
-
-查看日志：
-
-```bash
 docker logs --tail 100 zjut-graphiti-neo4j
 ```
 
@@ -237,10 +242,15 @@ Password: graphiti-zjut-2026
 
 ### 3. Memory 配置模板
 
-`bot/config.example.json` 已包含 Graphiti memory 配置：
+`bot/config.example.json` 包含 Graphiti memory 配置：
 
 ```json
 {
+  "provider": "deepseek",
+  "api_config": {
+    "api_key": "your-deepseek-api-key",
+    "model": "deepseek-v4-flash"
+  },
   "memory": {
     "enabled": true,
     "group_id": "student_default",
@@ -260,9 +270,10 @@ Password: graphiti-zjut-2026
 
 说明：
 
+- `provider` / `api_config.model` 控制 Web 和 CLI 的主问答模型。
 - `llm_api_key` 用于 Graphiti 内部实体与关系抽取。
 - `embedding_api_key` 用于 DashScope `text-embedding-v3`。
-- 主问答模型可以和 Graphiti 内部抽取模型不同。
+- 主问答模型可以和 Graphiti 内部抽取模型不同；当前推荐将主问答和记忆抽取解耦。
 - 当前固定 `graphiti-core==0.20.4`，便于与本地 Neo4j 5.20 环境复现。
 
 ## Neo4j 可视化 Memory
@@ -272,15 +283,7 @@ Password: graphiti-zjut-2026
 ```cypher
 MATCH (n)-[r]->(m)
 RETURN n, r, m
-LIMIT 100
-```
-
-查看 Graphiti 实体关系：
-
-```cypher
-MATCH (n:Entity)-[r:RELATES_TO]->(m:Entity)
-RETURN n, r, m
-LIMIT 100
+LIMIT 150
 ```
 
 查看对话 episode：
@@ -321,9 +324,7 @@ DETACH DELETE n
 
 ### OneKE 到课程知识图谱
 
-本项目的数据构建思路是：先使用 OneKE 从培养计划 PDF 中抽取结构化信息，再做实体规范化和关系清洗，最终形成可直接检索的课程知识图谱三元组。
-
-当前仓库保留了整理后的 `bot/data/zjut_triples_manual.json`，因此用户可以跳过 PDF 抽取阶段，直接复现问答系统。
+项目方法上先使用 OneKE 从培养计划 PDF 中抽取结构化信息，再做实体规范化、关系清洗和人工校验。当前仓库保留整理后的 `bot/data/zjut_triples_manual.json`，因此可跳过 PDF 抽取阶段直接复现问答流程。
 
 ### 基础 QA
 
@@ -338,39 +339,24 @@ DETACH DELETE n
 
 LLM 版本会先从知识图谱中检索相关三元组，再将这些三元组作为上下文传入大语言模型。这样既保留知识图谱的可靠性，也获得更自然的回答表达。
 
-### JSON Memory
-
-本地 JSON 记忆用于保存明确字段的学生画像，适合简单个性化推荐，但表达能力受固定 schema 限制。
-
 ### Graphiti Memory
 
-Graphiti 记忆将问答过程写入 Neo4j，形成 episode 和实体关系。后续提问时，系统会根据当前问题检索相关长期记忆，再注入 LLM prompt。
+Graphiti 记忆将问答过程写入 Neo4j，形成 episode、实体和事实关系。后续提问时，系统会根据当前问题检索相关长期记忆，再注入 LLM prompt。
 
-## 常用命令速查
+当前 Web 逻辑为“读 memory → 回答 → 后台写 memory”。这意味着用户不需要等待 Graphiti 抽取和 Neo4j 写入完成，但下一轮问题未必立刻读到上一轮刚写入的记忆。
 
-从仓库根目录开始：
+## 报告 PDF
 
-```bash
-cd bot
-python -m pip install -r requirements.txt
-cp config.example.json config.json
-python test_bot.py
-python src/llm_chatbot.py
-python app_llm.py
-```
+实验报告 PDF 已随仓库提供：
 
-Docker：
-
-```bash
-docker start zjut-graphiti-neo4j
-docker ps --filter "name=zjut-graphiti-neo4j"
-docker logs --tail 100 zjut-graphiti-neo4j
+```text
+docs/ZJUT_Companion_Bot_Report.pdf
 ```
 
 ## 开源复现说明
 
-- `config.json` 不提交，用户从 `config.example.json` 复制生成。
+- `bot/config.json` 不提交，用户从 `config.example.json` 复制生成。
 - `bot/data/student_memory.json` 不提交，它是运行时记忆状态。
 - `__pycache__/`、`.pyc`、日志文件不提交。
 - 仓库保留 `zjut_triples_manual.json`，无需重新运行 OneKE 即可复现问答流程。
-- 如果要复现完整数据构建流程，需要额外记录原始 PDF、OneKE 抽取 schema、抽取 prompt、后处理规则和最终三元组校验方式。
+- 如需复现完整数据构建流程，需要额外记录原始 PDF、OneKE 抽取 schema、抽取 prompt、后处理规则和三元组校验方式。
