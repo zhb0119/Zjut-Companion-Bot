@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZJUT伴学Bot - 你的智能学习伙伴</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .header .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .chat-container {
+            height: 450px;
+            overflow-y: auto;
+            padding: 20px;
+            background: #fafafa;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 75%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            line-height: 1.6;
+            white-space: normal;
+        }
+
+        .message.user .message-content {
+            background: #667eea;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.user .message-content {
+            white-space: pre-wrap;
+        }
+
+        .message.bot .message-content p {
+            margin: 6px 0;
+        }
+
+        .message.bot .message-content ul,
+        .message.bot .message-content ol {
+            margin: 6px 0 6px 20px;
+        }
+
+        .message.bot .message-content li {
+            margin: 3px 0;
+        }
+
+        .message.bot .message-content strong {
+            font-weight: 700;
+        }
+
+        .message.bot .message-content code {
+            background: #f1f3f5;
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 13px;
+        }
+
+        .input-container {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 10px;
+        }
+
+        #questionInput {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #questionInput:focus {
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #sendBtn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        #clearBtn {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        #clearBtn:hover {
+            background: #e0e0e0;
+        }
+
+        .examples {
+            padding: 15px 20px;
+            background: #fff3cd;
+            border-top: 1px solid #ffc107;
+        }
+
+        .examples h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #856404;
+        }
+
+        .example-questions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .example-btn {
+            padding: 6px 12px;
+            background: white;
+            border: 1px solid #ffc107;
+            border-radius: 15px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .example-btn:hover {
+            background: #ffc107;
+            color: white;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 10px;
+            color: #666;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .loading span {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 10px 16px;
+            background: white;
+            border-radius: 18px;
+            width: fit-content;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .typing-indicator.show {
+            display: block;
+        }
+
+        .typing-indicator span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #667eea;
+            margin: 0 2px;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>🎓 ZJUT伴学Bot</h1>
+                <div class="badge">你的智能学习伙伴 · 专业问答 · 学习规划</div>
+            </div>
+            <a href="/graph" class="graph-link" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 10px; font-size: 14px; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
+                🕸️ 知识图谱
+            </a>
+        </div>
+
+        <div class="stats" id="stats">
+            <div class="stat-item">
+                <div class="stat-value">-</div>
+                <div class="stat-label">知识三元组</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">-</div>
+                <div class="stat-label">实体数量</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">-</div>
+                <div class="stat-label">对话轮次</div>
+            </div>
+        </div>
+
+        <div class="examples">
+            <h3>💡 试试问我这些问题：</h3>
+            <div class="example-questions">
+                <p>💬 试试这些问题：</p>
+                <button class="example-btn" onclick="askExample('三个专业有什么区别？哪个更适合我？')">三个专业有什么区别？哪个更适合我？</button>
+                <button class="example-btn" onclick="askExample('通信工程专业的核心课程有哪些？')">通信工程专业的核心课程有哪些？</button>
+                <button class="example-btn" onclick="askExample('自动化专业需要多少学分毕业？')">自动化专业需要多少学分毕业？</button>
+                <button class="example-btn" onclick="askExample('智科专业有哪些双语课程？')">智科专业有哪些双语课程？</button>
+                <button class="example-btn" onclick="askExample('机器学习什么时候开课？')">机器学习什么时候开课？</button>
+                <button class="example-btn" onclick="askExample('我想找个轻松点的专业')">我想找个轻松点的专业</button>
+            </div>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="message bot">
+                <div class="message-content">
+                    嗨，同学！👋 我是ZJUT伴学Bot，你的智能学习伙伴！
+
+我对浙工大信息学院的<strong>三个专业</strong>非常了解：
+• 自动化专业
+• 智能科学与技术专业  
+• 通信工程专业
+
+可以帮你解答关于课程设置、学分要求、专业对比、职业方向等各种问题。
+
+不管是选课困惑、学习规划，还是想了解专业详情，都可以随时问我！让我们一起开启学习之旅吧~ 📚✨
+                </div>
+            </div>
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="questionInput" placeholder="请输入您的问题..." onkeypress="handleKeyPress(event)">
+            <button id="clearBtn" class="btn" onclick="clearHistory()">清空</button>
+            <button id="sendBtn" class="btn" onclick="sendQuestion()">发送</button>
+        </div>
+    </div>
+
+    <script>
+        async function loadStats() {
+            try {
+                const response = await fetch('/stats');
+                const data = await response.json();
+                
+                const statsDiv = document.getElementById('stats');
+                statsDiv.innerHTML = `
+                    <div class="stat-item">
+                        <div class="stat-value">${data.total_triples}</div>
+                        <div class="stat-label">知识三元组</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">${data.total_subjects}</div>
+                        <div class="stat-label">实体数量</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">${Math.floor(data.conversation_length / 2)}</div>
+                        <div class="stat-label">对话轮次</div>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('加载统计信息失败:', error);
+            }
+        }
+
+        function addMessage(content, isUser) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            if (isUser) {
+                contentDiv.textContent = content;
+            } else {
+                contentDiv.innerHTML = renderMarkdown(content);
+            }
+            
+            messageDiv.appendChild(contentDiv);
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function renderMarkdown(text) {
+            const escaped = escapeHtml(text || '');
+            const lines = escaped.split('\n');
+            const html = [];
+            let inList = false;
+            let listType = '';
+
+            for (const rawLine of lines) {
+                const line = rawLine.trim();
+
+                if (!line) {
+                    if (inList) {
+                        html.push(`</${listType}>`);
+                        inList = false;
+                        listType = '';
+                    }
+                    continue;
+                }
+
+                const unorderedMatch = line.match(/^[-*]\s+(.+)$/);
+                const orderedMatch = line.match(/^\d+\.\s+(.+)$/);
+                const listMatch = unorderedMatch || orderedMatch;
+                if (listMatch) {
+                    const currentType = orderedMatch ? 'ol' : 'ul';
+                    if (!inList) {
+                        html.push(`<${currentType}>`);
+                        inList = true;
+                        listType = currentType;
+                    } else if (listType !== currentType) {
+                        html.push(`</${listType}>`);
+                        html.push(`<${currentType}>`);
+                        listType = currentType;
+                    }
+                    html.push(`<li>${formatInlineMarkdown(listMatch[1])}</li>`);
+                    continue;
+                }
+
+                if (inList) {
+                    html.push(`</${listType}>`);
+                    inList = false;
+                    listType = '';
+                }
+
+                const headingMatch = line.match(/^(#{1,3})\s+(.+)$/);
+                if (headingMatch) {
+                    const level = headingMatch[1].length + 2;
+                    html.push(`<h${level}>${formatInlineMarkdown(headingMatch[2])}</h${level}>`);
+                } else {
+                    html.push(`<p>${formatInlineMarkdown(line)}</p>`);
+                }
+            }
+
+            if (inList) {
+                html.push(`</${listType}>`);
+            }
+
+            return html.join('');
+        }
+
+        function formatInlineMarkdown(text) {
+            return text
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                .replace(/`(.+?)`/g, '<code>$1</code>');
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        async function sendQuestion() {
+            const input = document.getElementById('questionInput');
+            const question = input.value.trim();
+            
+            if (!question) return;
+            
+            addMessage(question, true);
+            input.value = '';
+            
+            const sendBtn = document.getElementById('sendBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const typingIndicator = document.getElementById('typingIndicator');
+            
+            sendBtn.disabled = true;
+            clearBtn.disabled = true;
+            typingIndicator.classList.add('show');
+            
+            const chatContainer = document.getElementById('chatContainer');
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            
+            try {
+                const response = await fetch('/ask', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: question })
+                });
+                
+                const data = await response.json();
+                
+                typingIndicator.classList.remove('show');
+                
+                if (response.ok) {
+                    addMessage(data.answer, false);
+                    loadStats();
+                } else {
+                    addMessage('抱歉，处理您的问题时出现错误：' + data.error, false);
+                }
+            } catch (error) {
+                typingIndicator.classList.remove('show');
+                addMessage('抱歉，网络连接出现问题，请稍后重试。', false);
+            } finally {
+                sendBtn.disabled = false;
+                clearBtn.disabled = false;
+            }
+        }
+
+        async function clearHistory() {
+            if (!confirm('确定要清空对话历史吗？')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch('/clear', {
+                    method: 'POST',
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    document.getElementById('chatContainer').innerHTML = `
+                        <div class="message bot">
+                            <div class="message-content">对话历史已清空啦！😊 有什么新问题尽管问我吧~</div>
+                        </div>
+                    `;
+                    loadStats();
+                } else {
+                    alert('清空失败：' + data.error);
+                }
+            } catch (error) {
+                alert('清空失败：网络错误');
+            }
+        }
+
+        function askExample(question) {
+            document.getElementById('questionInput').value = question;
+            sendQuestion();
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendQuestion();
+            }
+        }
+
+        loadStats();
+        setInterval(loadStats, 10000);
+    </script>
+</body>
+</html>

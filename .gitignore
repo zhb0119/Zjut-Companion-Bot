@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.log
+.env
+config.json
+student_memory.json
+.DS_Store
+Thumbs.db

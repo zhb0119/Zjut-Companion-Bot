@@ -1,0 +1,4492 @@
+{
+  "triple_list": [
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "信息学院",
+      "object_type": "学院"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "166学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "自动控制原理",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "现代控制理论",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "微机原理",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "面向对象C++编程",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "电力电子技术",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "计算机控制技术",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "人工智能原理及应用",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "机器人控制",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "编程能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "系统设计能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "适用于",
+      "relation_type": "适用于",
+      "object": "装备自动化",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "适用于",
+      "relation_type": "适用于",
+      "object": "智能信息处理",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "自动控制原理",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业核心课程",
+      "object_type": "课程"
+    },
+    {
+      "subject": "高等数学Ⅰ",
+      "subject_type": "课程",
+      "relation": "前置课程",
+      "relation_type": "前置课程",
+      "object": "自动控制原理",
+      "object_type": "课程"
+    },
+    {
+      "subject": "线性代数A",
+      "subject_type": "课程",
+      "relation": "前置课程",
+      "relation_type": "前置课程",
+      "object": "现代控制理论",
+      "object_type": "课程"
+    },
+    {
+      "subject": "计算机网络",
+      "subject_type": "课程",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "双语教学",
+      "object_type": "知识点"
+    },
+    {
+      "subject": "信号与系统",
+      "subject_type": "课程",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "双语教学",
+      "object_type": "知识点"
+    },
+    {
+      "subject": "数字信号处理",
+      "subject_type": "课程",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "双语教学",
+      "object_type": "知识点"
+    },
+    {
+      "subject": "工程伦理",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1.0学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "工程经济分析及工程管理",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2.0学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "电力电子技术A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业必修课程",
+      "object_type": "课程"
+    },
+    {
+      "subject": "单片机原理与实践",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业必修课程",
+      "object_type": "课程"
+    },
+    {
+      "subject": "数学建模与辨识",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "系统与控制类",
+      "object_type": "课程"
+    },
+    {
+      "subject": "检测技术及仪表",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "系统与控制类",
+      "object_type": "课程"
+    },
+    {
+      "subject": "软件技术基础",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软硬件技术类",
+      "object_type": "课程"
+    },
+    {
+      "subject": "嵌入式系统",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软硬件技术类",
+      "object_type": "课程"
+    },
+    {
+      "subject": "电机与拖动基础",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "装备自动化方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "运动控制系统",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "装备自动化方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "图像处理与视频分析A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能信息处理方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "工业互联网",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能信息处理方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "毕业设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程"
+    },
+    {
+      "subject": "专业实习",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "主干学科",
+      "relation_type": "包含",
+      "object": "控制科学与工程",
+      "object_type": "知识点"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "学制",
+      "relation_type": "要求",
+      "object": "4年",
+      "object_type": "学制"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "授予学位",
+      "relation_type": "授予",
+      "object": "工学学士学位",
+      "object_type": "学位"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "7学分第二课堂",
+      "object_type": "学分"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "培养目标",
+      "relation_type": "培养",
+      "object": "自动化行业精英和领军人才",
+      "object_type": "培养目标"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "国际视野",
+      "object_type": "能力"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "创新精神",
+      "object_type": "能力"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "实践能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "终身学习能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "适用于",
+      "relation_type": "适用于",
+      "object": "系统研究",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "适用于",
+      "relation_type": "适用于",
+      "object": "工程实施",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数学建模与辨识",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "优化方法",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "检测技术及仪表",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业导论",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1.0学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "自动化专业导论",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "自动化专业导论",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电力电子技术A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "电力电子技术A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "单片机原理与实践",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3.0学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "单片机原理与实践",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "自动控制原理B",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "4.0学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "自动控制原理B",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "自动控制原理B",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "计算机控制技术A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "计算机控制技术A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "计算机控制技术A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "现代控制理论A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3.0学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "现代控制理论A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "现代控制理论A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "自动化技术前沿专题",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "0.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "自动化技术前沿专题",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "自动化技术前沿专题",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "过程控制系统",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "系统与控制类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "优化方法A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "系统与控制类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "数据驱动建模与控制A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "系统与控制类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "可视化高级编程",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软硬件技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "计算机控制工程",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软硬件技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电子线路CAD实验",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软硬件技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "DSP原理及应用B",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软硬件技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "供配电技术",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "装备自动化方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "电气控制与PLC技术A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "装备自动化方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "电力电子装置及系统",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "装备自动化方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "数据分析基础",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能信息处理方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "人工智能原理及应用",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能信息处理方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "智能机器人创新实践",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能信息处理方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "嵌入式人工智能技术",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能信息处理方向",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "算法设计与分析",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "智能物联技术及应用",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "通信原理与技术",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "新能源变换与控制技术",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "人机交互和界面设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "传感器原理及应用",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": ".NET技术",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "大学军事",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3.0学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "大学军事",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "大学军事",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "控制系统综合设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3.0学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "控制系统综合设计",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "控制系统综合设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "毕业设计",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "工业互联网综合设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3.0学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "工业互联网综合设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "机器人控制综合设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3.0学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "机器人控制综合设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "信号与系统",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电子系统设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "Java程序设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "高等数学",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "大学物理",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "模拟电子技术",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "数字电子技术",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "信息学院",
+      "object_type": "学院"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "166学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "7学分第二课堂",
+      "object_type": "学分"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "学制",
+      "relation_type": "要求",
+      "object": "4年",
+      "object_type": "学制"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "授予学位",
+      "relation_type": "授予",
+      "object": "工学学士学位",
+      "object_type": "学位"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "主干学科",
+      "relation_type": "包含",
+      "object": "人工智能",
+      "object_type": "学科"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "主干学科",
+      "relation_type": "包含",
+      "object": "控制科学与工程",
+      "object_type": "学科"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "复杂智能系统工程问题分析能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "沟通和学习能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "协作和创新能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "团队协作能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "适用于",
+      "relation_type": "适用于",
+      "object": "科学研究",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "适用于",
+      "relation_type": "适用于",
+      "object": "设计开发",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "适用于",
+      "relation_type": "适用于",
+      "object": "运营管理",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "人工智能原理",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "机器学习",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "深度学习应用",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "机器视觉技术",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "脑与认知科学基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "图像处理与视频分析",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "最优化方法",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "图机器学习",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数据挖掘",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "知识图谱",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "强化学习基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "自动控制原理",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "多源信息融合",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "机器人控制",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "智能机器人创新实践",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "嵌入式视音频系统开发",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "嵌入式人工智能技术",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数据分析基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数据库技术",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "算法设计与分析",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "现代控制理论",
+      "object_type": "课程"
+    },
+    {
+      "subject": "人工智能原理",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业核心课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "机器学习",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业核心课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "深度学习应用",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业核心课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "机器学习",
+      "subject_type": "课程",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "双语教学",
+      "object_type": "教学方式"
+    },
+    {
+      "subject": "强化学习基础",
+      "subject_type": "课程",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "双语教学",
+      "object_type": "教学方式"
+    },
+    {
+      "subject": "计算机网络",
+      "subject_type": "课程",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "双语教学",
+      "object_type": "教学方式"
+    },
+    {
+      "subject": "数字信号处理",
+      "subject_type": "课程",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "双语教学",
+      "object_type": "教学方式"
+    },
+    {
+      "subject": "人工智能原理",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "机器学习",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "深度学习应用",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "自动控制原理B",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "4学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "最优化方法",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "图像处理与视频分析A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "脑与认知科学基础",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数据分析基础",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数据挖掘",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能信息处理类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "知识图谱A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能信息处理类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "图机器学习",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能信息处理类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "嵌入式人工智能技术",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能信息处理类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "智能机器人创新实践",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能机器人类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "现代控制理论A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能机器人类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "多源信息融合",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能机器人类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "机器人控制",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能机器人类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "数据驱动建模与控制A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能机器人类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "智能驾驶技术A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "智能机器人类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "Java程序设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软件技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "算法设计与分析",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软件技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "数据库技术",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软件技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "嵌入式视音频系统开发",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软件技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "操作系统A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软件技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "高等数学Ⅰ",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "线性代数A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "面向对象C++编程A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "数据结构C",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "概率论与数理统计A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电路原理A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电子技术基础A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "微机原理A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "机器学习课程设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "机器视觉课程设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "毕业设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "专业实习",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "毕业实习",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "金融科技概论",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "新媒体营销",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "工业互联网",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "智能终端操作系统与应用A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "高等数学Ⅰ",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "线性代数A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "毕业设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "12学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "智能科学与技术专业导论",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "智能科学与技术专业导论",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数据分析基础",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "最优化方法",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "机器学习",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "人工智能原理",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "图像处理与视频分析A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "单片机原理与实践",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "脑与认知科学基础",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "自动控制原理B",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "深度学习应用",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "机器视觉技术",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "机器视觉技术",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "信息技术前沿专题",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "信息技术前沿专题",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "0.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "Java程序设计",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "Java程序设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "算法设计与分析",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "算法设计与分析",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数据库技术",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "数据库技术",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "嵌入式视音频系统开发",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "嵌入式视音频系统开发",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "操作系统A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "操作系统A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数据挖掘",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "数据挖掘",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "强化学习基础",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "强化学习基础",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "知识图谱A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "知识图谱A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "嵌入式人工智能技术",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "嵌入式人工智能技术",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "移动互联网技术",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "移动互联网技术",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "图机器学习",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "图机器学习",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "智能机器人创新实践",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "智能机器人创新实践",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "现代控制理论A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "多源信息融合",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "多源信息融合",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "机器人控制",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "机器人控制",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数据驱动建模与控制A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "数据驱动建模与控制A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "智能驾驶技术A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "智能驾驶技术A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "金融科技概论",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "金融科技概论",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "新媒体营销",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "新媒体营销",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "工业互联网",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "工业互联网",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "智能终端操作系统与应用A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "智能终端操作系统与应用A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "高等数学Ⅰ",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "线性代数A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "高等数学II",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "高等数学II",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "6学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "面向对象C++编程A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "面向对象C++编程A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "大学物理Ⅰ",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "大学物理Ⅰ",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "大学物理实验A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "大学物理实验A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "大学物理ⅡB",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "大学物理ⅡB",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "复变函数与积分变换",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "复变函数与积分变换",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "电路原理A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "电路原理A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "电路实验C",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "电路实验C",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "0.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "电子技术基础A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "电子技术基础A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "概率论与数理统计A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "概率论与数理统计A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数据结构C",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "数据结构C",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "微机原理A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "微机原理A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "机器学习课程设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "机器视觉课程设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "机器视觉课程设计",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "毕业实习",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "毕业实习",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "信息学院",
+      "object_type": "学院"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "166学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "7学分第二课堂",
+      "object_type": "学分"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "学制",
+      "relation_type": "要求",
+      "object": "4年",
+      "object_type": "学制"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "授予学位",
+      "relation_type": "授予",
+      "object": "工学学士学位",
+      "object_type": "学位"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "主干学科",
+      "relation_type": "包含",
+      "object": "信息与通信工程",
+      "object_type": "学科"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "创新精神",
+      "object_type": "能力"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "实践能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "国际视野",
+      "object_type": "能力"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "工程创新能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "终身学习能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "适用于",
+      "relation_type": "适用于",
+      "object": "设计研究",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "适用于",
+      "relation_type": "适用于",
+      "object": "开发制造",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "适用于",
+      "relation_type": "适用于",
+      "object": "运营维护",
+      "object_type": "职业方向"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "信号与系统",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "通信原理",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "电磁场与电磁波",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数字信号处理",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数据通信与计算机网络",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数字电路与数字逻辑",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "通信电子线路",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "嵌入式系统",
+      "object_type": "课程"
+    },
+    {
+      "subject": "信号与系统A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业核心课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "信号与系统A",
+      "subject_type": "课程",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "双语教学",
+      "object_type": "教学方式"
+    },
+    {
+      "subject": "信号与系统A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "4学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "信号与系统A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "通信原理A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业核心课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "通信原理A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "4学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "通信原理A",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "通信原理实验",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "0.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "通信原理实验",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "电磁场与电磁波",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业核心课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电磁场与电磁波",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "电磁场与电磁波",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "数字信号处理",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业核心课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "数字信号处理",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数字信号处理",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "数据通信与计算机网络",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业核心课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "数据通信与计算机网络",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数据通信与计算机网络",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "数字电路与数字逻辑B",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "数字电路与数字逻辑B",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "4学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数字电路与数字逻辑B",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "模拟电子技术C",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "模拟电子技术C",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "模拟电子技术C",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "通信电子线路",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "通信电子线路",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "4学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "通信电子线路",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "嵌入式系统B",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "嵌入式系统B",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "3.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "嵌入式系统B",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "通信工程专业导论",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "专业必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "通信工程专业导论",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "通信工程专业导论",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "一年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "电路原理B",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电路原理B",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "4学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "电路原理B",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "大学物理ⅡA",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "大学物理ⅡA",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "4学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "大学物理ⅡA",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "电子线路CAD实验",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "学科基础必修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电子线路CAD实验",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "电子线路CAD实验",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "三年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "Matlab与通信系统仿真",
+      "subject_type": "课程",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "双语教学",
+      "object_type": "教学方式"
+    },
+    {
+      "subject": "Matlab与通信系统仿真",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "信息与通信理论类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "移动通信原理及应用",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "通信网络类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "网络安全",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "通信网络类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "网络分析与计算思维",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "通信网络类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "软件定义网络",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "通信网络类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "通信光电子基础",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "光通信和微波技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "微波技术与天线",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "光通信和微波技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "光纤通信原理",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "光通信和微波技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "可编程逻辑器件及应用",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软硬件开发技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电子系统设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "软硬件开发技术类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "信息论基础",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "信息与通信理论类",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "人工智能概论",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "算法导论",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电力电子技术B",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "机器人技术导论",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "跨专业个性化选修课程",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "数字电路与数字逻辑课程设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "数字电路与数字逻辑课程设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "数字电路与数字逻辑课程设计",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "二年级第二学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "模拟电子技术课程设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "模拟电子技术课程设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "电子工艺实习",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "电子工艺实习",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "0.5学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "通信电子线路课程设计A",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "通信电子线路课程设计A",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "信号处理课程设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "信号处理课程设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "程序语言课程设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "程序语言课程设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "通信系统课程设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "通信系统课程设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "2学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "通信系统课程设计",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "嵌入式综合课程设计",
+      "subject_type": "课程",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "集中进行的实践教学环节",
+      "object_type": "课程类别"
+    },
+    {
+      "subject": "嵌入式综合课程设计",
+      "subject_type": "课程",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "1学分",
+      "object_type": "学分"
+    },
+    {
+      "subject": "嵌入式综合课程设计",
+      "subject_type": "课程",
+      "relation": "开设学期",
+      "relation_type": "时间",
+      "object": "四年级第一学期",
+      "object_type": "学期"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "智能科学与技术专业导论",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数据分析基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "最优化方法",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "图像处理与视频分析A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "单片机原理与实践",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "脑与认知科学基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "自动控制原理B",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "机器视觉技术",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "信息技术前沿专题",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "Java程序设计",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "算法设计与分析",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数据库技术",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "嵌入式视音频系统开发",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "操作系统A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数据挖掘",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "强化学习基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "知识图谱A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "移动互联网技术",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "智能机器人创新实践",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "现代控制理论A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "多源信息融合",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数据驱动建模与控制A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "智能驾驶技术A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "金融科技概论",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "新媒体营销",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "工业互联网",
+      "object_type": "课程"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "智能终端操作系统与应用A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "自动化专业导论",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "电力电子技术A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "单片机原理与实践",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "自动控制原理B",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "计算机控制技术A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "现代控制理论A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "自动化技术前沿专题",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数学建模与辨识",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "检测技术及仪表",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "过程控制系统",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "优化方法A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数据驱动建模与控制A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "软件技术基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "可视化高级编程",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "DSP原理及应用B",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "嵌入式系统",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "操作系统A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "电机与拖动基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "供配电技术",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "电气控制与PLC技术A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "电力电子装置及系统",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "运动控制系统",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数据分析基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "图像处理与视频分析A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "工业互联网",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "智能机器人创新实践",
+      "object_type": "课程"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "嵌入式人工智能技术",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "通信工程专业导论",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "信号与系统A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "通信原理A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "通信原理实验",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数字信号处理",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "通信电子线路",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "嵌入式系统B",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "数字电路与数字逻辑B",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "模拟电子技术C",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "电路原理B",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "电子线路CAD实验",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "Matlab与通信系统仿真",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "移动通信原理及应用",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "网络安全",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "网络分析与计算思维",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "软件定义网络",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "通信光电子基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "微波技术与天线",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "光纤通信原理",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "可编程逻辑器件及应用",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "信息论基础",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "人工智能概论",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "算法导论",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "电力电子技术B",
+      "object_type": "课程"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "机器人技术导论",
+      "object_type": "课程"
+    },
+    {
+      "subject": "浙江工业大学",
+      "subject_type": "学校",
+      "relation": "简称",
+      "relation_type": "简称",
+      "object": "浙工大",
+      "object_type": "别名"
+    },
+    {
+      "subject": "浙江工业大学",
+      "subject_type": "学校",
+      "relation": "位于",
+      "relation_type": "位置",
+      "object": "浙江省杭州市",
+      "object_type": "地点"
+    },
+    {
+      "subject": "浙江工业大学",
+      "subject_type": "学校",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "浙江省属高校",
+      "object_type": "学校类型"
+    },
+    {
+      "subject": "浙江工业大学",
+      "subject_type": "学校",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "朝晖校区",
+      "object_type": "校区"
+    },
+    {
+      "subject": "浙江工业大学",
+      "subject_type": "学校",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "屏峰校区",
+      "object_type": "校区"
+    },
+    {
+      "subject": "浙江工业大学",
+      "subject_type": "学校",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "莫干山校区",
+      "object_type": "校区"
+    },
+    {
+      "subject": "朝晖校区",
+      "subject_type": "校区",
+      "relation": "位于",
+      "relation_type": "位置",
+      "object": "杭州市拱墅区",
+      "object_type": "地点"
+    },
+    {
+      "subject": "屏峰校区",
+      "subject_type": "校区",
+      "relation": "位于",
+      "relation_type": "位置",
+      "object": "杭州市西湖区",
+      "object_type": "地点"
+    },
+    {
+      "subject": "莫干山校区",
+      "subject_type": "校区",
+      "relation": "位于",
+      "relation_type": "位置",
+      "object": "湖州市德清县",
+      "object_type": "地点"
+    },
+    {
+      "subject": "信息学院",
+      "subject_type": "学院",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "浙江工业大学",
+      "object_type": "学校"
+    },
+    {
+      "subject": "信息学院",
+      "subject_type": "学院",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "信息技术人才",
+      "object_type": "培养目标"
+    },
+    {
+      "subject": "信息学院",
+      "subject_type": "学院",
+      "relation": "关注",
+      "relation_type": "关注",
+      "object": "人工智能",
+      "object_type": "研究方向"
+    },
+    {
+      "subject": "信息学院",
+      "subject_type": "学院",
+      "relation": "关注",
+      "relation_type": "关注",
+      "object": "控制科学与工程",
+      "object_type": "研究方向"
+    },
+    {
+      "subject": "信息学院",
+      "subject_type": "学院",
+      "relation": "关注",
+      "relation_type": "关注",
+      "object": "通信与信息系统",
+      "object_type": "研究方向"
+    },
+    {
+      "subject": "信息学院",
+      "subject_type": "学院",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "自动化专业",
+      "object_type": "专业"
+    },
+    {
+      "subject": "信息学院",
+      "subject_type": "学院",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "智能科学与技术专业",
+      "object_type": "专业"
+    },
+    {
+      "subject": "信息学院",
+      "subject_type": "学院",
+      "relation": "开设",
+      "relation_type": "开设",
+      "object": "通信工程专业",
+      "object_type": "专业"
+    },
+    {
+      "subject": "图书馆",
+      "subject_type": "学习资源",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "浙江工业大学",
+      "object_type": "学校"
+    },
+    {
+      "subject": "图书馆",
+      "subject_type": "学习资源",
+      "relation": "提供",
+      "relation_type": "提供",
+      "object": "自习空间",
+      "object_type": "服务"
+    },
+    {
+      "subject": "图书馆",
+      "subject_type": "学习资源",
+      "relation": "提供",
+      "relation_type": "提供",
+      "object": "文献检索",
+      "object_type": "服务"
+    },
+    {
+      "subject": "图书馆",
+      "subject_type": "学习资源",
+      "relation": "提供",
+      "relation_type": "提供",
+      "object": "电子数据库",
+      "object_type": "服务"
+    },
+    {
+      "subject": "教务系统",
+      "subject_type": "校园系统",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "浙江工业大学",
+      "object_type": "学校"
+    },
+    {
+      "subject": "教务系统",
+      "subject_type": "校园系统",
+      "relation": "提供",
+      "relation_type": "提供",
+      "object": "课程选课",
+      "object_type": "服务"
+    },
+    {
+      "subject": "教务系统",
+      "subject_type": "校园系统",
+      "relation": "提供",
+      "relation_type": "提供",
+      "object": "成绩查询",
+      "object_type": "服务"
+    },
+    {
+      "subject": "教务系统",
+      "subject_type": "校园系统",
+      "relation": "提供",
+      "relation_type": "提供",
+      "object": "培养方案查询",
+      "object_type": "服务"
+    },
+    {
+      "subject": "第二课堂",
+      "subject_type": "培养环节",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "浙江工业大学人才培养体系",
+      "object_type": "培养体系"
+    },
+    {
+      "subject": "第二课堂",
+      "subject_type": "培养环节",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "创新创业活动",
+      "object_type": "活动"
+    },
+    {
+      "subject": "第二课堂",
+      "subject_type": "培养环节",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "学科竞赛",
+      "object_type": "活动"
+    },
+    {
+      "subject": "第二课堂",
+      "subject_type": "培养环节",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "社会实践",
+      "object_type": "活动"
+    },
+    {
+      "subject": "学科竞赛",
+      "subject_type": "活动",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "工程实践能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "学科竞赛",
+      "subject_type": "活动",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "团队协作能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "创新创业活动",
+      "subject_type": "活动",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "创新能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "学生社团",
+      "subject_type": "校园生活",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "浙江工业大学校园文化",
+      "object_type": "校园文化"
+    },
+    {
+      "subject": "学生社团",
+      "subject_type": "校园生活",
+      "relation": "提供",
+      "relation_type": "提供",
+      "object": "兴趣发展平台",
+      "object_type": "服务"
+    },
+    {
+      "subject": "实验室",
+      "subject_type": "学习资源",
+      "relation": "支持",
+      "relation_type": "支持",
+      "object": "课程实验",
+      "object_type": "实践环节"
+    },
+    {
+      "subject": "实验室",
+      "subject_type": "学习资源",
+      "relation": "支持",
+      "relation_type": "支持",
+      "object": "科研训练",
+      "object_type": "实践环节"
+    },
+    {
+      "subject": "本科生导师",
+      "subject_type": "培养支持",
+      "relation": "提供",
+      "relation_type": "提供",
+      "object": "学业指导",
+      "object_type": "服务"
+    },
+    {
+      "subject": "本科生导师",
+      "subject_type": "培养支持",
+      "relation": "提供",
+      "relation_type": "提供",
+      "object": "科研启蒙",
+      "object_type": "服务"
+    },
+    {
+      "subject": "职业发展",
+      "subject_type": "学生发展",
+      "relation": "需要",
+      "relation_type": "需要",
+      "object": "专业课程基础",
+      "object_type": "能力基础"
+    },
+    {
+      "subject": "职业发展",
+      "subject_type": "学生发展",
+      "relation": "需要",
+      "relation_type": "需要",
+      "object": "项目实践经历",
+      "object_type": "能力基础"
+    },
+    {
+      "subject": "考研规划",
+      "subject_type": "学生发展",
+      "relation": "需要",
+      "relation_type": "需要",
+      "object": "数学基础",
+      "object_type": "能力基础"
+    },
+    {
+      "subject": "考研规划",
+      "subject_type": "学生发展",
+      "relation": "需要",
+      "relation_type": "需要",
+      "object": "专业课复习",
+      "object_type": "能力基础"
+    },
+    {
+      "subject": "信息学院学生",
+      "subject_type": "学生群体",
+      "relation": "适合参与",
+      "relation_type": "适合参与",
+      "object": "程序设计竞赛",
+      "object_type": "活动"
+    },
+    {
+      "subject": "信息学院学生",
+      "subject_type": "学生群体",
+      "relation": "适合参与",
+      "relation_type": "适合参与",
+      "object": "电子设计竞赛",
+      "object_type": "活动"
+    },
+    {
+      "subject": "信息学院学生",
+      "subject_type": "学生群体",
+      "relation": "适合参与",
+      "relation_type": "适合参与",
+      "object": "人工智能相关竞赛",
+      "object_type": "活动"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "简称",
+      "relation_type": "简称",
+      "object": "智能车竞赛",
+      "object_type": "别名"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "创办时间",
+      "relation_type": "时间",
+      "object": "2005年",
+      "object_type": "时间"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "主办单位",
+      "relation_type": "主办",
+      "object": "中国自动化学会",
+      "object_type": "组织"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "全国普通高校学科竞赛排行榜竞赛",
+      "object_type": "竞赛类型"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "工程实践活动",
+      "object_type": "活动类型"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "研究对象",
+      "relation_type": "研究",
+      "object": "智能模型汽车",
+      "object_type": "竞赛对象"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "要求",
+      "relation_type": "要求",
+      "object": "自主识别路径",
+      "object_type": "技术要求"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "融合",
+      "relation_type": "融合",
+      "object": "控制技术",
+      "object_type": "知识领域"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "融合",
+      "relation_type": "融合",
+      "object": "传感技术",
+      "object_type": "知识领域"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "融合",
+      "relation_type": "融合",
+      "object": "模式识别",
+      "object_type": "知识领域"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "融合",
+      "relation_type": "融合",
+      "object": "电子技术",
+      "object_type": "知识领域"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "融合",
+      "relation_type": "融合",
+      "object": "计算机技术",
+      "object_type": "知识领域"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "工程实践能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "创新能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "团队协作能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "信息学院学生",
+      "subject_type": "学生群体",
+      "relation": "适合参与",
+      "relation_type": "适合参与",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "适合参与",
+      "relation_type": "适合参与",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "适合参与",
+      "relation_type": "适合参与",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "可参与",
+      "relation_type": "适合参与",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "自动控制原理",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "现代控制理论",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "单片机原理与实践",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "嵌入式系统",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "数据结构C",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "机器学习",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "图像处理与视频分析A",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "人工智能原理",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生智能汽车竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "简称",
+      "relation_type": "简称",
+      "object": "电赛",
+      "object_type": "别名"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "英文名",
+      "relation_type": "别名",
+      "object": "National Undergraduate Electronics Design Contest",
+      "object_type": "英文名称"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "发起单位",
+      "relation_type": "发起",
+      "object": "教育部",
+      "object_type": "组织"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "发起单位",
+      "relation_type": "发起",
+      "object": "工业和信息化部",
+      "object_type": "组织"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "属于",
+      "relation_type": "属于",
+      "object": "大学生学科竞赛",
+      "object_type": "竞赛类型"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "面向",
+      "relation_type": "面向",
+      "object": "大学生",
+      "object_type": "学生群体"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "推动",
+      "relation_type": "推动",
+      "object": "信息与电子类课程改革",
+      "object_type": "教育目标"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "结合",
+      "relation_type": "结合",
+      "object": "理论设计",
+      "object_type": "竞赛环节"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "结合",
+      "relation_type": "结合",
+      "object": "实际制作",
+      "object_type": "竞赛环节"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "电子设计制作能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "实践创新意识",
+      "object_type": "能力"
+    },
+    {
+      "subject": "全国大学生电子设计竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "培养",
+      "relation_type": "培养",
+      "object": "团队协作能力",
+      "object_type": "能力"
+    },
+    {
+      "subject": "信息学院学生",
+      "subject_type": "学生群体",
+      "relation": "适合参与",
+      "relation_type": "适合参与",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "自动化专业",
+      "subject_type": "专业",
+      "relation": "适合参与",
+      "relation_type": "适合参与",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "通信工程专业",
+      "subject_type": "专业",
+      "relation": "适合参与",
+      "relation_type": "适合参与",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "智能科学与技术专业",
+      "subject_type": "专业",
+      "relation": "可参与",
+      "relation_type": "适合参与",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "电路原理A",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "模拟电子技术基础",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "数字电子技术基础",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "单片机原理与实践",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "电力电子技术A",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "信号与系统A",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "数字信号处理",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "嵌入式系统B",
+      "subject_type": "课程",
+      "relation": "支撑",
+      "relation_type": "支撑",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "全国大学生智能汽车竞赛",
+      "subject_type": "学科竞赛",
+      "relation": "关联",
+      "relation_type": "关联",
+      "object": "全国大学生电子设计竞赛",
+      "object_type": "学科竞赛"
+    },
+    {
+      "subject": "竞赛学习路径",
+      "subject_type": "学习路径",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "基础电路能力",
+      "object_type": "能力阶段"
+    },
+    {
+      "subject": "竞赛学习路径",
+      "subject_type": "学习路径",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "嵌入式开发能力",
+      "object_type": "能力阶段"
+    },
+    {
+      "subject": "竞赛学习路径",
+      "subject_type": "学习路径",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "控制算法能力",
+      "object_type": "能力阶段"
+    },
+    {
+      "subject": "竞赛学习路径",
+      "subject_type": "学习路径",
+      "relation": "包含",
+      "relation_type": "包含",
+      "object": "系统集成能力",
+      "object_type": "能力阶段"
+    },
+    {
+      "subject": "基础电路能力",
+      "subject_type": "能力阶段",
+      "relation": "由课程支撑",
+      "relation_type": "支撑",
+      "object": "电路原理A",
+      "object_type": "课程"
+    },
+    {
+      "subject": "嵌入式开发能力",
+      "subject_type": "能力阶段",
+      "relation": "由课程支撑",
+      "relation_type": "支撑",
+      "object": "单片机原理与实践",
+      "object_type": "课程"
+    },
+    {
+      "subject": "控制算法能力",
+      "subject_type": "能力阶段",
+      "relation": "由课程支撑",
+      "relation_type": "支撑",
+      "object": "自动控制原理",
+      "object_type": "课程"
+    },
+    {
+      "subject": "系统集成能力",
+      "subject_type": "能力阶段",
+      "relation": "由课程支撑",
+      "relation_type": "支撑",
+      "object": "嵌入式系统",
+      "object_type": "课程"
+    }
+  ]
+}

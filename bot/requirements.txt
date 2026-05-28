@@ -1,0 +1,5 @@
+flask==2.3.0
+zhipuai>=2.0.0
+dashscope>=1.14.0
+openai>=1.0.0
+graphiti-core==0.20.4

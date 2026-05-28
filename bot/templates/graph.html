@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识图谱可视化 - ZJUT伴学Bot</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 80px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .controls {
+            padding: 15px 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            min-height: 60px;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .control-group label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        select, input[type="number"] {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        select:focus, input[type="number"]:focus {
+            border-color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-left: auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+        }
+
+        #graph {
+            width: 100%;
+            height: calc(100vh - 200px);
+            border: none;
+        }
+
+        .legend {
+            position: absolute;
+            top: 220px;
+            right: 40px;
+            background: white;
+            padding: 12px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            max-width: 150px;
+        }
+
+        .legend h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 5px 0;
+            font-size: 12px;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 999;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🕸️ 知识图谱可视化</h1>
+            <a href="/" class="back-btn">← 返回聊天</a>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>过滤类型:</label>
+                <select id="filterType">
+                    <option value="all">全部</option>
+                    <option value="major">专业相关</option>
+                    <option value="course">课程相关</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>显示数量:</label>
+                <input type="number" id="limitInput" value="50" min="10" max="500" step="10">
+            </div>
+
+            <div class="control-group">
+                <label>布局方式:</label>
+                <select id="layoutType">
+                    <option value="force">力导向布局</option>
+                    <option value="hierarchical">分层布局</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>搜索节点:</label>
+                <input type="text" id="searchInput" placeholder="输入课程或专业名..." style="width: 200px;">
+            </div>
+
+            <button class="btn" onclick="loadGraph()">🔄 刷新图谱</button>
+            <button class="btn" onclick="searchNode()" style="background: linear-gradient(135deg, #45B7D1 0%, #4ECDC4 100%);">🔍 搜索</button>
+            <button class="btn" onclick="resetView()" style="background: linear-gradient(135deg, #FFA07A 0%, #FF6B6B 100%);">↺ 重置视图</button>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="nodeCount">-</div>
+                    <div class="stat-label">节点数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="edgeCount">-</div>
+                    <div class="stat-label">关系数</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="position: relative;">
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <div>加载中...</div>
+            </div>
+            <div id="graph"></div>
+        </div>
+    </div>
+
+    <div class="legend">
+        <h3>节点类型</h3>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #FF6B6B;"></div>
+            <span>专业</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #4ECDC4;"></div>
+            <span>课程</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #45B7D1;"></div>
+            <span>学分</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #FFA07A;"></div>
+            <span>能力</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background: #98D8C8;"></div>
+            <span>其他</span>
+        </div>
+    </div>
+
+    <script>
+        let network = null;
+
+        const colorMap = {
+            '专业': '#FF6B6B',
+            '课程': '#4ECDC4',
+            '学分': '#45B7D1',
+            '能力': '#FFA07A',
+            '学院': '#F7DC6F',
+            '学期': '#BB8FCE',
+            '课程类别': '#85C1E2',
+            '职业方向': '#F8B739'
+        };
+
+        function getNodeColor(type) {
+            return colorMap[type] || '#98D8C8';
+        }
+
+        async function loadGraph() {
+            const filterType = document.getElementById('filterType').value;
+            const limit = document.getElementById('limitInput').value;
+            
+            document.getElementById('loading').style.display = 'block';
+            
+            try {
+                const response = await fetch(`/graph/data?filter=${filterType}&limit=${limit}`);
+                const data = await response.json();
+                
+                // 更新统计
+                document.getElementById('nodeCount').textContent = data.nodes.length;
+                document.getElementById('edgeCount').textContent = data.edges.length;
+                
+                // 准备节点数据
+                const nodes = data.nodes.map(node => {
+                    let size = 15;
+                    let shape = 'dot';
+                    let fontSize = 12;
+                    
+                    if (node.type === '专业') {
+                        size = 40;
+                        shape = 'box';
+                        fontSize = 16;
+                    } else if (node.type === '课程') {
+                        size = 20;
+                        fontSize = 11;
+                    } else if (node.type === '学院') {
+                        size = 35;
+                        shape = 'diamond';
+                        fontSize = 14;
+                    }
+                    
+                    return {
+                        id: node.id,
+                        label: node.label.length > 12 ? node.label.substring(0, 12) + '...' : node.label,
+                        title: `<b>${node.label}</b><br>类型: ${node.type}`,
+                        color: {
+                            background: getNodeColor(node.type),
+                            border: getNodeColor(node.type),
+                            highlight: {
+                                background: '#FFD700',
+                                border: '#FFA500'
+                            }
+                        },
+                        font: { 
+                            size: fontSize, 
+                            color: '#333',
+                            face: 'Arial',
+                            bold: node.type === '专业' || node.type === '学院'
+                        },
+                        shape: shape,
+                        size: size
+                    };
+                });
+                
+                // 准备边数据
+                const edges = data.edges.map(edge => ({
+                    from: edge.from,
+                    to: edge.to,
+                    label: edge.label,
+                    title: edge.title,
+                    arrows: 'to',
+                    font: { size: 10, align: 'middle' },
+                    color: { color: '#848484', highlight: '#667eea' }
+                }));
+                
+                // 创建图谱
+                const container = document.getElementById('graph');
+                const graphData = { nodes: nodes, edges: edges };
+                
+                const layoutType = document.getElementById('layoutType').value;
+                
+                const options = {
+                    nodes: {
+                        borderWidth: 2,
+                        borderWidthSelected: 4,
+                        shadow: {
+                            enabled: true,
+                            color: 'rgba(0,0,0,0.2)',
+                            size: 10,
+                            x: 2,
+                            y: 2
+                        }
+                    },
+                    edges: {
+                        width: 1.5,
+                        smooth: {
+                            type: 'continuous',
+                            roundness: 0.5
+                        },
+                        color: {
+                            inherit: false,
+                            color: '#848484',
+                            highlight: '#667eea',
+                            hover: '#667eea'
+                        }
+                    },
+                    layout: layoutType === 'hierarchical' ? {
+                        hierarchical: {
+                            enabled: true,
+                            direction: 'UD',
+                            sortMethod: 'directed',
+                            nodeSpacing: 200,
+                            levelSeparation: 250,
+                            treeSpacing: 300
+                        }
+                    } : {
+                        randomSeed: 42
+                    },
+                    physics: layoutType === 'hierarchical' ? {
+                        enabled: false
+                    } : {
+                        enabled: true,
+                        barnesHut: {
+                            gravitationalConstant: -8000,
+                            centralGravity: 0.1,
+                            springLength: 250,
+                            springConstant: 0.02,
+                            damping: 0.15,
+                            avoidOverlap: 0.5
+                        },
+                        stabilization: {
+                            enabled: true,
+                            iterations: 300,
+                            updateInterval: 25
+                        },
+                        maxVelocity: 30,
+                        minVelocity: 0.75
+                    },
+                    interaction: {
+                        hover: true,
+                        tooltipDelay: 100,
+                        zoomView: true,
+                        dragView: true,
+                        navigationButtons: true,
+                        keyboard: {
+                            enabled: true,
+                            bindToWindow: false
+                        }
+                    }
+                };
+                
+                if (network) {
+                    network.destroy();
+                }
+                
+                network = new vis.Network(container, graphData, options);
+                
+                // 根据布局类型处理加载完成
+                if (layoutType === 'hierarchical') {
+                    // 分层布局没有物理引擎，直接隐藏加载提示
+                    setTimeout(() => {
+                        document.getElementById('loading').style.display = 'none';
+                    }, 500);
+                } else {
+                    // 力导向布局等待稳定后隐藏加载提示
+                    network.on('stabilizationIterationsDone', function() {
+                        document.getElementById('loading').style.display = 'none';
+                    });
+                    
+                    // 添加超时保护，防止一直加载
+                    setTimeout(() => {
+                        document.getElementById('loading').style.display = 'none';
+                    }, 10000);
+                }
+                
+                // 点击节点事件
+                network.on('click', function(params) {
+                    if (params.nodes.length > 0) {
+                        const nodeId = params.nodes[0];
+                        console.log('点击节点:', nodeId);
+                    }
+                });
+                
+            } catch (error) {
+                console.error('加载图谱失败:', error);
+                alert('加载图谱失败: ' + error.message);
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+        
+        // 搜索节点功能
+        function searchNode() {
+            const searchText = document.getElementById('searchInput').value.trim();
+            if (!searchText || !network) {
+                alert('请输入搜索内容');
+                return;
+            }
+            
+            const allNodes = network.body.data.nodes.get();
+            const matchedNodes = allNodes.filter(node => {
+                // 搜索节点ID（完整名称）
+                return node.id.includes(searchText);
+            });
+            
+            if (matchedNodes.length === 0) {
+                alert(`未找到包含"${searchText}"的节点`);
+                return;
+            }
+            
+            // 高亮匹配的节点
+            const nodeIds = matchedNodes.map(n => n.id);
+            network.selectNodes(nodeIds);
+            
+            // 聚焦到第一个匹配节点
+            if (nodeIds.length > 0) {
+                network.focus(nodeIds[0], {
+                    scale: 1.5,
+                    animation: {
+                        duration: 1000,
+                        easingFunction: 'easeInOutQuad'
+                    }
+                });
+            }
+            
+            // 在控制台显示找到的节点
+            console.log(`找到 ${matchedNodes.length} 个匹配节点:`, matchedNodes.map(n => n.id));
+            
+            // 在页面上显示提示
+            if (matchedNodes.length > 1) {
+                alert(`找到 ${matchedNodes.length} 个匹配节点，已高亮显示`);
+            }
+        }
+        
+        // 重置视图
+        function resetView() {
+            if (network) {
+                network.fit({
+                    animation: {
+                        duration: 1000,
+                        easingFunction: 'easeInOutQuad'
+                    }
+                });
+                network.unselectAll();
+            }
+        }
+        
+        // 回车搜索
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchNode();
+                }
+            });
+        });
+        
+        // 页面加载时自动加载图谱
+        window.onload = function() {
+            loadGraph();
+        };
+    </script>
+</body>
+</html>
