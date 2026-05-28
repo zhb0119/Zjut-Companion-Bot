@@ -3,95 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZJUT伴学Bot - 你的智能学习伙伴</title>
+    <title>ZJUT Companion Bot</title>
     <style>
+        :root {
+            --bg: #f4f6f8;
+            --panel: #ffffff;
+            --line: #d9e0e8;
+            --text: #1f2933;
+            --muted: #687789;
+            --primary: #0f766e;
+            --primary-hover: #0b5f59;
+            --danger: #b42318;
+            --danger-hover: #8f1d14;
+            --soft: #eef3f7;
+            --amber: #b7791f;
+            --sidebar: #24313f;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .app-shell {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 248px minmax(0, 1fr);
+        }
+
+        .sidebar {
+            background: var(--sidebar);
+            color: #f7fafc;
+            padding: 22px 18px;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .brand {
+            display: flex;
             align-items: center;
-            padding: 20px;
+            gap: 10px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
         }
 
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 900px;
-            overflow: hidden;
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            background: #0f766e;
+            font-weight: 800;
         }
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
+        .brand-title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.2;
         }
 
-        .header h1 {
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-
-        .header .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 5px 15px;
-            border-radius: 20px;
+        .brand-subtitle {
+            margin-top: 3px;
+            color: #b7c2cf;
             font-size: 12px;
-            margin-top: 10px;
         }
 
-        .stats {
+        .nav-group {
             display: flex;
-            justify-content: space-around;
-            padding: 20px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #e0e0e0;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 38px;
+            padding: 0 11px;
+            border-radius: 8px;
+            color: #d7dee8;
+            text-decoration: none;
+        }
+
+        .nav-item.active {
+            background: rgba(15, 118, 110, 0.22);
+            color: #ffffff;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+            opacity: 0.8;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 8px;
+            color: #c6d0dc;
+            line-height: 1.6;
+            font-size: 12px;
+        }
+
+        .main {
+            min-width: 0;
+            display: grid;
+            grid-template-rows: auto 1fr;
+        }
+
+        .topbar {
+            height: 68px;
+            padding: 0 28px;
+            background: var(--panel);
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .page-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .page-desc {
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .top-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            min-height: 36px;
+            padding: 0 14px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 650;
+            white-space: nowrap;
+        }
+
+        .btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.58;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            border-color: var(--line);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            background: var(--soft);
+        }
+
+        .btn-danger {
+            background: #fff5f4;
+            border-color: #f1b5ae;
+            color: var(--danger);
+        }
+
+        .btn-danger:hover {
+            color: #ffffff;
+            background: var(--danger-hover);
+            border-color: var(--danger-hover);
+        }
+
+        .workspace {
+            min-height: 0;
+            padding: 22px 28px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 300px;
+            gap: 18px;
+        }
+
+        .work-panel,
+        .side-panel {
+            min-height: 0;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .work-panel {
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            border-bottom: 1px solid var(--line);
         }
 
         .stat-item {
-            text-align: center;
+            min-height: 74px;
+            padding: 15px 18px;
+            border-right: 1px solid var(--line);
         }
 
-        .stat-value {
-            font-size: 24px;
-            font-weight: bold;
-            color: #667eea;
+        .stat-item:last-child {
+            border-right: 0;
         }
 
         .stat-label {
+            color: var(--muted);
             font-size: 12px;
-            color: #666;
-            margin-top: 5px;
+        }
+
+        .stat-value {
+            margin-top: 8px;
+            font-size: 24px;
+            line-height: 1;
+            font-weight: 760;
+            color: var(--text);
+        }
+
+        .prompt-bar {
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            overflow-x: auto;
+        }
+
+        .example-btn {
+            min-height: 32px;
+            padding: 0 10px;
+            border: 1px solid #d2dae4;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #344054;
+            cursor: pointer;
+            white-space: nowrap;
+            font: inherit;
+        }
+
+        .example-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         .chat-container {
-            height: 450px;
+            min-height: 420px;
             overflow-y: auto;
-            padding: 20px;
-            background: #fafafa;
+            padding: 18px;
+            background: #fbfcfd;
         }
 
         .message {
-            margin-bottom: 15px;
             display: flex;
-            align-items: flex-start;
-            animation: fadeIn 0.3s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            margin-bottom: 14px;
         }
 
         .message.user {
@@ -99,32 +294,28 @@
         }
 
         .message-content {
-            max-width: 75%;
-            padding: 12px 16px;
-            border-radius: 18px;
-            line-height: 1.6;
-            white-space: normal;
+            max-width: 76%;
+            padding: 11px 13px;
+            border-radius: 8px;
+            line-height: 1.65;
+            word-break: break-word;
         }
 
         .message.user .message-content {
-            background: #667eea;
-            color: white;
-            border-bottom-right-radius: 4px;
-        }
-
-        .message.bot .message-content {
-            background: white;
-            color: #333;
-            border-bottom-left-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .message.user .message-content {
+            background: #e6f4f1;
+            border: 1px solid #b7ddd6;
+            color: #073f3b;
             white-space: pre-wrap;
         }
 
+        .message.bot .message-content {
+            background: #ffffff;
+            border: 1px solid var(--line);
+            color: var(--text);
+        }
+
         .message.bot .message-content p {
-            margin: 6px 0;
+            margin: 5px 0;
         }
 
         .message.bot .message-content ul,
@@ -132,289 +323,235 @@
             margin: 6px 0 6px 20px;
         }
 
-        .message.bot .message-content li {
-            margin: 3px 0;
-        }
-
-        .message.bot .message-content strong {
-            font-weight: 700;
-        }
-
         .message.bot .message-content code {
-            background: #f1f3f5;
+            background: #eef3f7;
             padding: 2px 5px;
-            border-radius: 5px;
+            border-radius: 4px;
             font-family: Consolas, Monaco, monospace;
             font-size: 13px;
         }
 
-        .input-container {
-            padding: 20px;
-            background: white;
-            border-top: 1px solid #e0e0e0;
-            display: flex;
-            gap: 10px;
-        }
-
-        .memory-tools {
-            padding: 14px 20px;
-            background: #f8f9fa;
-            border-top: 1px solid #e0e0e0;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .memory-tools input[type="file"] {
-            flex: 1;
-            min-width: 220px;
-            padding: 8px;
-            background: white;
-            border: 1px solid #d8dee8;
-            border-radius: 10px;
-        }
-
-        #memoryTextInput {
-            flex: 1 1 100%;
-            min-height: 76px;
-            padding: 10px 12px;
-            border: 1px solid #d8dee8;
-            border-radius: 10px;
-            resize: vertical;
-            font-family: inherit;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        #uploadBtn {
-            background: #14532d;
-            color: white;
-        }
-
-        #resetMemoryBtn {
-            background: #7f1d1d;
-            color: white;
-        }
-
-        #questionInput {
-            flex: 1;
-            padding: 12px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 25px;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        #questionInput:focus {
-            border-color: #667eea;
-        }
-
-        .btn {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn:active {
-            transform: translateY(0);
-        }
-
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        #sendBtn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        #clearBtn {
-            background: #f0f0f0;
-            color: #666;
-        }
-
-        #clearBtn:hover {
-            background: #e0e0e0;
-        }
-
-        .examples {
-            padding: 15px 20px;
-            background: #fff3cd;
-            border-top: 1px solid #ffc107;
-        }
-
-        .examples h3 {
-            font-size: 14px;
-            margin-bottom: 10px;
-            color: #856404;
-        }
-
-        .example-questions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .example-btn {
-            padding: 6px 12px;
-            background: white;
-            border: 1px solid #ffc107;
-            border-radius: 15px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .example-btn:hover {
-            background: #ffc107;
-            color: white;
-        }
-
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 10px;
-            color: #666;
-        }
-
-        .loading.show {
-            display: block;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .loading span {
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-
         .typing-indicator {
             display: none;
-            padding: 10px 16px;
-            background: white;
-            border-radius: 18px;
-            width: fit-content;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0 18px 12px;
+            color: var(--muted);
         }
 
         .typing-indicator.show {
             display: block;
         }
 
-        .typing-indicator span {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #667eea;
-            margin: 0 2px;
-            animation: typing 1.4s infinite;
+        .composer {
+            padding: 14px 18px;
+            border-top: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto auto;
+            gap: 10px;
+            background: #ffffff;
         }
 
-        .typing-indicator span:nth-child(2) {
-            animation-delay: 0.2s;
+        #questionInput {
+            min-height: 38px;
+            padding: 0 12px;
+            border: 1px solid #cfd8e3;
+            border-radius: 8px;
+            outline: none;
+            font: inherit;
         }
 
-        .typing-indicator span:nth-child(3) {
-            animation-delay: 0.4s;
+        #questionInput:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
         }
 
-        @keyframes typing {
-            0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-10px); }
+        .side-panel {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 740;
+        }
+
+        .status-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #edf1f5;
+            color: var(--muted);
+        }
+
+        .status-row strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .notice {
+            padding: 12px;
+            border-radius: 8px;
+            background: #fff8eb;
+            border: 1px solid #f2d59b;
+            color: #6f4e12;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 980px) {
+            .app-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .workspace {
+                grid-template-columns: 1fr;
+                padding: 14px;
+            }
+
+            .topbar {
+                height: auto;
+                padding: 14px;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .stat-item:last-child {
+                border-bottom: 0;
+            }
+
+            .composer {
+                grid-template-columns: 1fr;
+            }
+
+            .message-content {
+                max-width: 94%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div>
-                <h1>🎓 ZJUT伴学Bot</h1>
-                <div class="badge">你的智能学习伙伴 · 专业问答 · 学习规划</div>
-            </div>
-            <a href="/graph" class="graph-link" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 10px; font-size: 14px; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
-                🕸️ 知识图谱
-            </a>
-        </div>
-
-        <div class="stats" id="stats">
-            <div class="stat-item">
-                <div class="stat-value">-</div>
-                <div class="stat-label">知识三元组</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">-</div>
-                <div class="stat-label">实体数量</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">-</div>
-                <div class="stat-label">对话轮次</div>
-            </div>
-        </div>
-
-        <div class="examples">
-            <h3>💡 试试问我这些问题：</h3>
-            <div class="example-questions">
-                <p>💬 试试这些问题：</p>
-                <button class="example-btn" onclick="askExample('三个专业有什么区别？哪个更适合我？')">三个专业有什么区别？哪个更适合我？</button>
-                <button class="example-btn" onclick="askExample('通信工程专业的核心课程有哪些？')">通信工程专业的核心课程有哪些？</button>
-                <button class="example-btn" onclick="askExample('自动化专业需要多少学分毕业？')">自动化专业需要多少学分毕业？</button>
-                <button class="example-btn" onclick="askExample('智科专业有哪些双语课程？')">智科专业有哪些双语课程？</button>
-                <button class="example-btn" onclick="askExample('机器学习什么时候开课？')">机器学习什么时候开课？</button>
-                <button class="example-btn" onclick="askExample('我想找个轻松点的专业')">我想找个轻松点的专业</button>
-            </div>
-        </div>
-
-        <div class="chat-container" id="chatContainer">
-            <div class="message bot">
-                <div class="message-content">
-                    嗨，同学！👋 我是ZJUT伴学Bot，你的智能学习伙伴！
-
-我对浙工大信息学院的<strong>三个专业</strong>非常了解：
-• 自动化专业
-• 智能科学与技术专业  
-• 通信工程专业
-
-可以帮你解答关于课程设置、学分要求、专业对比、职业方向等各种问题。
-
-不管是选课困惑、学习规划，还是想了解专业详情，都可以随时问我！让我们一起开启学习之旅吧~ 📚✨
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">Z</div>
+                <div>
+                    <div class="brand-title">ZJUT Companion</div>
+                    <div class="brand-subtitle">培养方案问答工作台</div>
                 </div>
             </div>
-        </div>
+            <nav class="nav-group">
+                <a class="nav-item active" href="/">
+                    <span class="nav-dot"></span>
+                    问答工作台
+                </a>
+                <a class="nav-item" href="/graph">
+                    <span class="nav-dot"></span>
+                    知识图谱
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                当前版本启用 LLM、RAG 和 Graphiti 长期记忆。记忆维护仅保留清空操作。
+            </div>
+        </aside>
 
-        <div class="typing-indicator" id="typingIndicator">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <div class="page-title">学生培养方案问答</div>
+                    <div class="page-desc">面向自动化、智科、通信工程的课程与学习规划咨询</div>
+                </div>
+                <div class="top-actions">
+                    <button id="resetMemoryBtn" class="btn btn-danger" onclick="resetMemory()">清空长期记忆</button>
+                    <a class="btn btn-secondary" href="/graph">查看知识图谱</a>
+                </div>
+            </header>
 
-        <div class="memory-tools">
-            <input type="file" id="memoryFileInput" accept=".xlsx">
-            <button id="uploadBtn" class="btn" onclick="uploadMemoryFile()">上传成绩单</button>
-            <button id="resetMemoryBtn" class="btn" onclick="resetMemory()">清空长期记忆</button>
-            <textarea id="memoryTextInput" placeholder="也可以把成绩单文字、自我介绍、学习目标直接粘贴在这里，写入长期记忆。"></textarea>
-            <button id="saveTextMemoryBtn" class="btn" onclick="saveTextMemory()">保存粘贴文本</button>
-        </div>
+            <section class="workspace">
+                <div class="work-panel">
+                    <div class="metrics" id="stats">
+                        <div class="stat-item">
+                            <div class="stat-label">知识三元组</div>
+                            <div class="stat-value">-</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">实体数量</div>
+                            <div class="stat-value">-</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">对话轮次</div>
+                            <div class="stat-value">-</div>
+                        </div>
+                    </div>
 
-        <div class="input-container">
-            <input type="text" id="questionInput" placeholder="请输入您的问题..." onkeypress="handleKeyPress(event)">
-            <button id="clearBtn" class="btn" onclick="clearHistory()">清空</button>
-            <button id="sendBtn" class="btn" onclick="sendQuestion()">发送</button>
-        </div>
+                    <div class="prompt-bar">
+                        <button class="example-btn" onclick="askExample('三个专业有什么区别？哪个更适合我？')">专业对比</button>
+                        <button class="example-btn" onclick="askExample('通信工程专业的核心课程有哪些？')">核心课程</button>
+                        <button class="example-btn" onclick="askExample('自动化专业需要多少学分毕业？')">毕业学分</button>
+                        <button class="example-btn" onclick="askExample('智科专业有哪些双语课程？')">双语课程</button>
+                        <button class="example-btn" onclick="askExample('机器学习什么时候开课？')">开课学期</button>
+                    </div>
+
+                    <div class="chat-container" id="chatContainer">
+                        <div class="message bot">
+                            <div class="message-content">
+                                <p>你好，我是 ZJUT Companion Bot。你可以询问课程设置、学分要求、先修关系、专业对比和学习规划。</p>
+                                <p>当前页面已关闭成绩单上传入口，仅保留长期记忆清空能力。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="typing-indicator" id="typingIndicator">正在生成回答...</div>
+
+                    <div class="composer">
+                        <input type="text" id="questionInput" placeholder="请输入问题，例如：自动化专业核心课程有哪些？" onkeypress="handleKeyPress(event)">
+                        <button id="clearBtn" class="btn btn-secondary" onclick="clearHistory()">清空对话</button>
+                        <button id="sendBtn" class="btn btn-primary" onclick="sendQuestion()">发送</button>
+                    </div>
+                </div>
+
+                <aside class="side-panel">
+                    <div>
+                        <div class="section-title">系统状态</div>
+                        <div class="status-list" style="margin-top: 12px;">
+                            <div class="status-row">
+                                <span>问答模式</span>
+                                <strong>LLM + RAG</strong>
+                            </div>
+                            <div class="status-row">
+                                <span>长期记忆</span>
+                                <strong>Graphiti</strong>
+                            </div>
+                            <div class="status-row">
+                                <span>数据范围</span>
+                                <strong>信息学院</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notice">
+                        长期记忆会影响个性化回答。需要重新开始时，使用右上角“清空长期记忆”。
+                    </div>
+                </aside>
+            </section>
+        </main>
     </div>
 
     <script>
@@ -422,20 +559,19 @@
             try {
                 const response = await fetch('/stats');
                 const data = await response.json();
-                
                 const statsDiv = document.getElementById('stats');
                 statsDiv.innerHTML = `
                     <div class="stat-item">
-                        <div class="stat-value">${data.total_triples}</div>
                         <div class="stat-label">知识三元组</div>
+                        <div class="stat-value">${data.total_triples}</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">${data.total_subjects}</div>
                         <div class="stat-label">实体数量</div>
+                        <div class="stat-value">${data.total_subjects}</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">${Math.floor(data.conversation_length / 2)}</div>
                         <div class="stat-label">对话轮次</div>
+                        <div class="stat-value">${Math.floor(data.conversation_length / 2)}</div>
                     </div>
                 `;
             } catch (error) {
@@ -447,7 +583,7 @@
             const chatContainer = document.getElementById('chatContainer');
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
-            
+
             const contentDiv = document.createElement('div');
             contentDiv.className = 'message-content';
             if (isUser) {
@@ -455,7 +591,7 @@
             } else {
                 contentDiv.innerHTML = renderMarkdown(content);
             }
-            
+
             messageDiv.appendChild(contentDiv);
             chatContainer.appendChild(messageDiv);
             chatContainer.scrollTop = chatContainer.scrollHeight;
@@ -470,7 +606,6 @@
 
             for (const rawLine of lines) {
                 const line = rawLine.trim();
-
                 if (!line) {
                     if (inList) {
                         html.push(`</${listType}>`);
@@ -504,19 +639,12 @@
                     listType = '';
                 }
 
-                const headingMatch = line.match(/^(#{1,3})\s+(.+)$/);
-                if (headingMatch) {
-                    const level = headingMatch[1].length + 2;
-                    html.push(`<h${level}>${formatInlineMarkdown(headingMatch[2])}</h${level}>`);
-                } else {
-                    html.push(`<p>${formatInlineMarkdown(line)}</p>`);
-                }
+                html.push(`<p>${formatInlineMarkdown(line)}</p>`);
             }
 
             if (inList) {
                 html.push(`</${listType}>`);
             }
-
             return html.join('');
         }
 
@@ -538,45 +666,36 @@
         async function sendQuestion() {
             const input = document.getElementById('questionInput');
             const question = input.value.trim();
-            
             if (!question) return;
-            
+
             addMessage(question, true);
             input.value = '';
-            
+
             const sendBtn = document.getElementById('sendBtn');
             const clearBtn = document.getElementById('clearBtn');
             const typingIndicator = document.getElementById('typingIndicator');
-            
             sendBtn.disabled = true;
             clearBtn.disabled = true;
             typingIndicator.classList.add('show');
-            
-            const chatContainer = document.getElementById('chatContainer');
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-            
+
             try {
                 const response = await fetch('/ask', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({ question: question })
                 });
-                
                 const data = await response.json();
-                
                 typingIndicator.classList.remove('show');
-                
+
                 if (response.ok) {
                     addMessage(data.answer, false);
                     loadStats();
                 } else {
-                    addMessage('抱歉，处理您的问题时出现错误：' + data.error, false);
+                    addMessage('处理问题时出现错误：' + data.error, false);
                 }
             } catch (error) {
                 typingIndicator.classList.remove('show');
-                addMessage('抱歉，网络连接出现问题，请稍后重试。', false);
+                addMessage('网络连接出现问题，请稍后重试。', false);
             } finally {
                 sendBtn.disabled = false;
                 clearBtn.disabled = false;
@@ -584,21 +703,15 @@
         }
 
         async function clearHistory() {
-            if (!confirm('确定要清空对话历史吗？')) {
-                return;
-            }
-            
+            if (!confirm('确定要清空当前对话历史吗？')) return;
+
             try {
-                const response = await fetch('/clear', {
-                    method: 'POST',
-                });
-                
+                const response = await fetch('/clear', { method: 'POST' });
                 const data = await response.json();
-                
                 if (response.ok) {
                     document.getElementById('chatContainer').innerHTML = `
                         <div class="message bot">
-                            <div class="message-content">对话历史已清空啦！😊 有什么新问题尽管问我吧~</div>
+                            <div class="message-content"><p>${escapeHtml(data.message || '对话历史已清空。')}</p></div>
                         </div>
                     `;
                     loadStats();
@@ -611,16 +724,11 @@
         }
 
         async function resetMemory() {
-            if (!confirm('确定要物理清空当前 Graphiti 长期记忆吗？')) {
-                return;
-            }
+            if (!confirm('确定要清空当前 Graphiti 长期记忆吗？')) return;
 
             try {
-                const response = await fetch('/memory/reset', {
-                    method: 'POST',
-                });
+                const response = await fetch('/memory/reset', { method: 'POST' });
                 const data = await response.json();
-
                 if (response.ok) {
                     addMessage(data.message || '长期记忆已清空。', false);
                     loadStats();
@@ -629,68 +737,6 @@
                 }
             } catch (error) {
                 alert('清空长期记忆失败：网络错误');
-            }
-        }
-
-        async function uploadMemoryFile() {
-            const input = document.getElementById('memoryFileInput');
-            if (!input.files.length) {
-                alert('请先选择一个 .xlsx 文件。');
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append('file', input.files[0]);
-
-            try {
-                const response = await fetch('/upload', {
-                    method: 'POST',
-                    body: formData,
-                });
-                const data = await response.json();
-
-                if (response.ok) {
-                    addMessage(`${data.filename} 已写入长期记忆，共 ${data.characters} 个字符。`, false);
-                    input.value = '';
-                    loadStats();
-                } else {
-                    alert('上传失败：' + data.error);
-                }
-            } catch (error) {
-                alert('上传失败：网络错误');
-            }
-        }
-
-        async function saveTextMemory() {
-            const textarea = document.getElementById('memoryTextInput');
-            const content = textarea.value.trim();
-            if (!content) {
-                alert('请先粘贴要写入长期记忆的文本。');
-                return;
-            }
-
-            try {
-                const response = await fetch('/memory/text', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        title: '手动粘贴的学生信息',
-                        content: content,
-                    }),
-                });
-                const data = await response.json();
-
-                if (response.ok) {
-                    addMessage(`已写入长期记忆，共 ${data.characters} 个字符。`, false);
-                    textarea.value = '';
-                    loadStats();
-                } else {
-                    alert('保存失败：' + data.error);
-                }
-            } catch (error) {
-                alert('保存失败：网络错误');
             }
         }
 
