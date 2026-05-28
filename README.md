@@ -19,6 +19,14 @@
 - [Bot 系统界面与知识图谱可视化演示](bot/vedio/system_demo.mp4)
 - [Neo4j Memory System 图可视化演示](bot/vedio/memory_graph_demo.mp4)
 
+知识图谱可视化演示（截取自 `system_demo.mp4` 11s-15s）：
+
+![知识图谱可视化演示](bot/vedio/kg_visualization_demo.gif)
+
+Graphiti / Neo4j memory system 图可视化演示：
+
+![Memory System 图可视化演示](bot/vedio/memory_system_demo.gif)
+
 ### Web 问答工作台
 
 当前 Web 端采用业务工作台式布局，包含统计指标、快捷问题、聊天区、系统状态面板和知识图谱入口。为避免隐私材料误上传，Web 端不暴露成绩单上传接口，仅保留清空对话和清空长期记忆。
@@ -115,7 +123,9 @@ bot/data/zjut_triples_manual.json
     │   └── neo4j_memory_text.png
     ├── vedio/
     │   ├── system_demo.mp4
-    │   └── memory_graph_demo.mp4
+    │   ├── memory_graph_demo.mp4
+    │   ├── kg_visualization_demo.gif
+    │   └── memory_system_demo.gif
     ├── src/
     │   ├── answer_generator.py
     │   ├── chatbot.py
